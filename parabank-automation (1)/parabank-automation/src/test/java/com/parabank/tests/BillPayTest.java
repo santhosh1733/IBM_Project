@@ -9,7 +9,6 @@ import com.parabank.utils.ConfigReader;
 import com.parabank.utils.ExcelUtils;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.util.HashMap;
@@ -24,18 +23,18 @@ import java.util.Map;
  * mismatch validation, balance integration, transaction-history integration,
  * and amount-required validation.
  *
+ * The application URL is read by BaseTest from config.properties.
  * Personal credentials are intentionally not committed to source. The public
  * ParaBank seeded demo credentials john/demo are only a fallback. Each team
- * member can use a different registered user at run time without changing
- * shared config.properties or committing credentials:
+ * member can use a different registered user at run time without committing
+ * credentials:
  *
  * mvn test -Dtest=BillPayTest -Dparabank.username=<user> -Dparabank.password=<pass>
  */
 public class BillPayTest extends BaseTest {
 
-    private static final String DEFAULT_BILLPAY_URL = "https://parabank.parasoft.com/parabankv2/index.htm";
-    private static final String DEFAULT_USERNAME = "gurukr2527";
-    private static final String DEFAULT_PASSWORD = "Test123";
+    private static final String DEFAULT_USERNAME = "john";
+    private static final String DEFAULT_PASSWORD = "demo";
 
     private final Map<String, Map<String, String>> testDataById = new HashMap<>();
 
@@ -50,18 +49,6 @@ public class BillPayTest extends BaseTest {
                 testDataById.put(testCaseId, row);
             }
         }
-    }
-
-    /**
-     * BaseTest first creates the driver. This module-level setup then points
-     * only BillPayTest at ParaBank 2.0 without changing the shared project URL
-     * used by other team members. Override with -Dparabank.billpay.url=...
-     * whenever the team decides to execute this module against another
-     * ParaBank environment.
-     */
-    @BeforeMethod(alwaysRun = true)
-    public void openBillPayEnvironment() {
-        driver.get(System.getProperty("parabank.billpay.url", DEFAULT_BILLPAY_URL));
     }
 
     @Test(groups = {"smoke", "e2e"},

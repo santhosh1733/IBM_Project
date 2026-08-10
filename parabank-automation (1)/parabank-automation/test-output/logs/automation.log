@@ -1,0 +1,538 @@
+2026-08-10 14:38:03 [main] INFO  com.parabank.listeners.TestListener - ===== Suite started: parabank-automation =====
+2026-08-10 14:38:36 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabank/index.htm
+2026-08-10 14:38:39 [main] INFO  com.parabank.listeners.TestListener - Test started: pbAuto01_verifyEndToEndSuccessfulBillPayment
+2026-08-10 14:38:47 [main] INFO  com.parabank.listeners.TestListener - Test PASSED: pbAuto01_verifyEndToEndSuccessfulBillPayment
+2026-08-10 14:38:53 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabank/index.htm
+2026-08-10 14:38:55 [main] INFO  com.parabank.listeners.TestListener - Test started: pbAuto02_verifyAccountNumberMismatchValidation
+2026-08-10 14:39:01 [main] INFO  com.parabank.listeners.TestListener - Test PASSED: pbAuto02_verifyAccountNumberMismatchValidation
+2026-08-10 14:39:06 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabank/index.htm
+2026-08-10 14:39:06 [main] INFO  com.parabank.listeners.TestListener - Test started: pbAuto03_verifyAccountBalanceAfterSuccessfulBillPayment
+2026-08-10 14:39:17 [main] INFO  com.parabank.listeners.TestListener - Test PASSED: pbAuto03_verifyAccountBalanceAfterSuccessfulBillPayment
+2026-08-10 14:39:24 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabank/index.htm
+2026-08-10 14:39:26 [main] INFO  com.parabank.listeners.TestListener - Test started: pbAuto04_verifyBillPaymentTransactionHistory
+2026-08-10 14:39:35 [main] INFO  com.parabank.listeners.TestListener - Test PASSED: pbAuto04_verifyBillPaymentTransactionHistory
+2026-08-10 14:39:39 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabank/index.htm
+2026-08-10 14:39:41 [main] INFO  com.parabank.listeners.TestListener - Test started: pbAuto05_verifyPaymentAmountMandatoryValidation
+2026-08-10 14:39:48 [main] INFO  com.parabank.listeners.TestListener - Test PASSED: pbAuto05_verifyPaymentAmountMandatoryValidation
+2026-08-10 14:39:49 [main] INFO  com.parabank.listeners.TestListener - ===== Suite finished: parabank-automation | Passed: 5 | Failed: 0 | Skipped: 0 =====
+2026-08-10 14:57:06 [main] INFO  com.parabank.listeners.TestListener - ===== Suite started: Surefire test =====
+2026-08-10 14:57:13 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabank/index.htm
+2026-08-10 14:57:16 [main] INFO  com.parabank.listeners.TestListener - Test started: pbAuto01_verifyEndToEndSuccessfulBillPayment
+2026-08-10 14:57:16 [main] INFO  com.parabank.tests.BaseTest - Step 1: Login to ParaBank using valid credentials.
+2026-08-10 14:57:19 [main] INFO  com.parabank.tests.BaseTest - Step 1 Passed: Login successful and Accounts Overview displayed.
+2026-08-10 14:57:19 [main] INFO  com.parabank.tests.BaseTest - Step 2: Navigate to Bill Pay and enter valid payee/payment details. Payee=AutoPayee01, Amount=1.00, From Account=12345.
+2026-08-10 14:57:22 [main] INFO  com.parabank.tests.BaseTest - Step 2 Passed: Bill Pay form populated with valid test data.
+2026-08-10 14:57:22 [main] INFO  com.parabank.tests.BaseTest - Step 3: Click Send Payment.
+2026-08-10 14:57:22 [main] INFO  com.parabank.tests.BaseTest - Step 3 Passed: Bill Pay request submitted without a backend application error.
+2026-08-10 14:57:22 [main] INFO  com.parabank.tests.BaseTest - Step 4: Verify the Bill Payment Complete confirmation.
+2026-08-10 14:57:22 [main] INFO  com.parabank.tests.BaseTest - Verification Passed: Bill Payment Complete confirmation is displayed.
+2026-08-10 14:57:22 [main] INFO  com.parabank.tests.BaseTest - Step 5: Verify confirmation payee name, payment amount and source account.
+2026-08-10 14:57:23 [main] INFO  com.parabank.tests.BaseTest - Verification Passed: Payee=AutoPayee01, Amount=$1.00 and From Account=12345 are correct.
+2026-08-10 14:57:23 [main] INFO  com.parabank.listeners.TestListener - Test PASSED: pbAuto01_verifyEndToEndSuccessfulBillPayment
+2026-08-10 14:57:26 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabank/index.htm
+2026-08-10 14:57:28 [main] INFO  com.parabank.listeners.TestListener - Test started: pbAuto02_verifyAccountNumberMismatchValidation
+2026-08-10 14:57:28 [main] INFO  com.parabank.tests.BaseTest - Step 1: Login to ParaBank using valid credentials.
+2026-08-10 14:57:30 [main] INFO  com.parabank.tests.BaseTest - Step 1 Passed: Login successful and Accounts Overview displayed.
+2026-08-10 14:57:31 [main] INFO  com.parabank.tests.BaseTest - Step 2: Navigate to Bill Pay and enter valid payee details with mismatching Account and Verify Account values. Account=154440, Verify Account=154441.
+2026-08-10 14:57:34 [main] INFO  com.parabank.tests.BaseTest - Step 2 Passed: Mismatching account numbers and remaining valid data entered.
+2026-08-10 14:57:34 [main] INFO  com.parabank.tests.BaseTest - Step 3: Click Send Payment.
+2026-08-10 14:57:34 [main] INFO  com.parabank.tests.BaseTest - Step 4: Verify account-number mismatch validation is displayed.
+2026-08-10 14:57:34 [main] INFO  com.parabank.tests.BaseTest - Verification Passed: Account-number mismatch validation is displayed.
+2026-08-10 14:57:34 [main] INFO  com.parabank.tests.BaseTest - Step 5: Verify the mismatch validation message text.
+2026-08-10 14:57:34 [main] INFO  com.parabank.tests.BaseTest - Verification Passed: Validation message is 'The account numbers do not match.'.
+2026-08-10 14:57:34 [main] INFO  com.parabank.listeners.TestListener - Test PASSED: pbAuto02_verifyAccountNumberMismatchValidation
+2026-08-10 14:57:37 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabank/index.htm
+2026-08-10 14:57:39 [main] INFO  com.parabank.listeners.TestListener - Test started: pbAuto03_verifyAccountBalanceAfterSuccessfulBillPayment
+2026-08-10 14:57:39 [main] INFO  com.parabank.tests.BaseTest - Step 1: Login to ParaBank using valid credentials.
+2026-08-10 14:57:41 [main] INFO  com.parabank.tests.BaseTest - Step 1 Passed: Login successful and Accounts Overview displayed.
+2026-08-10 14:57:41 [main] INFO  com.parabank.tests.BaseTest - Step 2: Record the current balance of source account 12345.
+2026-08-10 14:57:41 [main] INFO  com.parabank.tests.BaseTest - Step 2 Passed: Balance before payment = $-2307.00.
+2026-08-10 14:57:41 [main] INFO  com.parabank.tests.BaseTest - Step 3: Navigate to Bill Pay, enter valid data and submit payment of $2.00.
+2026-08-10 14:57:45 [main] INFO  com.parabank.tests.BaseTest - Step 3 Passed: Bill payment completed successfully.
+2026-08-10 14:57:45 [main] INFO  com.parabank.tests.BaseTest - Step 4: Return to Accounts Overview and read the updated balance.
+2026-08-10 14:57:46 [main] INFO  com.parabank.tests.BaseTest - Step 4 Passed: Balance after payment = $-2309.00.
+2026-08-10 14:57:46 [main] INFO  com.parabank.tests.BaseTest - Step 5: Verify source-account balance decreased exactly by the paid amount.
+2026-08-10 14:57:46 [main] INFO  com.parabank.tests.BaseTest - Verification Passed: Balance changed from $-2307.00 to $-2309.00, exactly matching payment amount $2.00.
+2026-08-10 14:57:46 [main] INFO  com.parabank.listeners.TestListener - Test PASSED: pbAuto03_verifyAccountBalanceAfterSuccessfulBillPayment
+2026-08-10 14:57:49 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabank/index.htm
+2026-08-10 14:57:51 [main] INFO  com.parabank.listeners.TestListener - Test started: pbAuto04_verifyBillPaymentTransactionHistory
+2026-08-10 14:57:51 [main] INFO  com.parabank.tests.BaseTest - Step 1: Login to ParaBank using valid credentials.
+2026-08-10 14:57:54 [main] INFO  com.parabank.tests.BaseTest - Step 1 Passed: Login successful and Accounts Overview displayed.
+2026-08-10 14:57:54 [main] INFO  com.parabank.tests.BaseTest - Step 2: Navigate to Bill Pay and submit a valid payment. Payee=GuruTxnPayee, Amount=3.00, From Account=12345.
+2026-08-10 14:57:57 [main] INFO  com.parabank.tests.BaseTest - Step 2 Passed: Bill payment completed successfully.
+2026-08-10 14:57:57 [main] INFO  com.parabank.tests.BaseTest - Step 3: Return to Accounts Overview and open source account 12345.
+2026-08-10 14:57:59 [main] INFO  com.parabank.tests.BaseTest - Step 3 Passed: Account Details / Account Activity page opened.
+2026-08-10 14:57:59 [main] INFO  com.parabank.tests.BaseTest - Step 4: Verify the transaction-history table is displayed.
+2026-08-10 14:57:59 [main] INFO  com.parabank.tests.BaseTest - Verification Passed: Transaction-history table is displayed.
+2026-08-10 14:57:59 [main] INFO  com.parabank.tests.BaseTest - Step 5: Verify the newly created Bill Pay transaction contains the expected payee and debit amount.
+2026-08-10 14:57:59 [main] INFO  com.parabank.tests.BaseTest - Verification Passed: Transaction history contains Payee=GuruTxnPayee and Amount=$3.00.
+2026-08-10 14:57:59 [main] INFO  com.parabank.listeners.TestListener - Test PASSED: pbAuto04_verifyBillPaymentTransactionHistory
+2026-08-10 14:58:03 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabank/index.htm
+2026-08-10 14:58:06 [main] INFO  com.parabank.listeners.TestListener - Test started: pbAuto05_verifyPaymentAmountMandatoryValidation
+2026-08-10 14:58:06 [main] INFO  com.parabank.tests.BaseTest - Step 1: Login to ParaBank using valid credentials.
+2026-08-10 14:58:08 [main] INFO  com.parabank.tests.BaseTest - Step 1 Passed: Login successful and Accounts Overview displayed.
+2026-08-10 14:58:08 [main] INFO  com.parabank.tests.BaseTest - Step 2: Navigate to Bill Pay and enter valid payee/account details while leaving Amount blank.
+2026-08-10 14:58:11 [main] INFO  com.parabank.tests.BaseTest - Step 2 Passed: Valid Bill Pay data entered and Amount left blank.
+2026-08-10 14:58:11 [main] INFO  com.parabank.tests.BaseTest - Step 3: Click Send Payment.
+2026-08-10 14:58:11 [main] INFO  com.parabank.tests.BaseTest - Step 4: Verify Amount mandatory validation is displayed.
+2026-08-10 14:58:11 [main] INFO  com.parabank.tests.BaseTest - Verification Passed: Amount-required validation is displayed.
+2026-08-10 14:58:11 [main] INFO  com.parabank.tests.BaseTest - Step 5: Verify the visible validation message belongs to the Amount field.
+2026-08-10 14:58:11 [main] INFO  com.parabank.tests.BaseTest - Verification Passed: Amount validation message = 'The amount cannot be empty.'.
+2026-08-10 14:58:11 [main] INFO  com.parabank.listeners.TestListener - Test PASSED: pbAuto05_verifyPaymentAmountMandatoryValidation
+2026-08-10 14:58:12 [main] INFO  com.parabank.listeners.TestListener - ===== Suite finished: Surefire test | Passed: 5 | Failed: 0 | Skipped: 0 =====
+2026-08-10 15:06:16 [main] INFO  com.parabank.listeners.TestListener - ===== Suite started: parabank-automation =====
+2026-08-10 15:06:22 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabank/index.htm
+2026-08-10 15:06:24 [main] INFO  com.parabank.listeners.TestListener - Test started: pbAuto01_verifyEndToEndSuccessfulBillPayment
+2026-08-10 15:06:24 [main] INFO  com.parabank.tests.BaseTest - Step 1: Login to ParaBank using valid credentials.
+2026-08-10 15:06:27 [main] INFO  com.parabank.tests.BaseTest - Step 1 Passed: Login successful and Accounts Overview displayed.
+2026-08-10 15:06:27 [main] INFO  com.parabank.tests.BaseTest - Step 2: Navigate to Bill Pay and enter valid payee/payment details. Payee=AutoPayee01, Amount=1.00, From Account=13566.
+2026-08-10 15:06:29 [main] INFO  com.parabank.tests.BaseTest - Step 2 Passed: Bill Pay form populated with valid test data.
+2026-08-10 15:06:29 [main] INFO  com.parabank.tests.BaseTest - Step 3: Click Send Payment.
+2026-08-10 15:06:30 [main] INFO  com.parabank.tests.BaseTest - Step 3 Passed: Bill Pay request submitted without a backend application error.
+2026-08-10 15:06:30 [main] INFO  com.parabank.tests.BaseTest - Step 4: Verify the Bill Payment Complete confirmation.
+2026-08-10 15:06:30 [main] INFO  com.parabank.tests.BaseTest - Verification Passed: Bill Payment Complete confirmation is displayed.
+2026-08-10 15:06:30 [main] INFO  com.parabank.tests.BaseTest - Step 5: Verify confirmation payee name, payment amount and source account.
+2026-08-10 15:06:30 [main] INFO  com.parabank.tests.BaseTest - Verification Passed: Payee=AutoPayee01, Amount=$1.00 and From Account=13566 are correct.
+2026-08-10 15:06:30 [main] INFO  com.parabank.listeners.TestListener - Test PASSED: pbAuto01_verifyEndToEndSuccessfulBillPayment
+2026-08-10 15:06:34 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabank/index.htm
+2026-08-10 15:06:35 [main] INFO  com.parabank.listeners.TestListener - Test started: pbAuto02_verifyAccountNumberMismatchValidation
+2026-08-10 15:06:35 [main] INFO  com.parabank.tests.BaseTest - Step 1: Login to ParaBank using valid credentials.
+2026-08-10 15:06:37 [main] INFO  com.parabank.tests.BaseTest - Step 1 Passed: Login successful and Accounts Overview displayed.
+2026-08-10 15:06:37 [main] INFO  com.parabank.tests.BaseTest - Step 2: Navigate to Bill Pay and enter valid payee details with mismatching Account and Verify Account values. Account=154440, Verify Account=154441.
+2026-08-10 15:06:40 [main] INFO  com.parabank.tests.BaseTest - Step 2 Passed: Mismatching account numbers and remaining valid data entered.
+2026-08-10 15:06:40 [main] INFO  com.parabank.tests.BaseTest - Step 3: Click Send Payment.
+2026-08-10 15:06:40 [main] INFO  com.parabank.tests.BaseTest - Step 4: Verify account-number mismatch validation is displayed.
+2026-08-10 15:06:40 [main] INFO  com.parabank.tests.BaseTest - Verification Passed: Account-number mismatch validation is displayed.
+2026-08-10 15:06:40 [main] INFO  com.parabank.tests.BaseTest - Step 5: Verify the mismatch validation message text.
+2026-08-10 15:06:40 [main] INFO  com.parabank.tests.BaseTest - Verification Passed: Validation message is 'The account numbers do not match.'.
+2026-08-10 15:06:40 [main] INFO  com.parabank.listeners.TestListener - Test PASSED: pbAuto02_verifyAccountNumberMismatchValidation
+2026-08-10 15:06:44 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabank/index.htm
+2026-08-10 15:06:46 [main] INFO  com.parabank.listeners.TestListener - Test started: pbAuto03_verifyAccountBalanceAfterSuccessfulBillPayment
+2026-08-10 15:06:46 [main] INFO  com.parabank.tests.BaseTest - Step 1: Login to ParaBank using valid credentials.
+2026-08-10 15:06:48 [main] INFO  com.parabank.tests.BaseTest - Step 1 Passed: Login successful and Accounts Overview displayed.
+2026-08-10 15:06:48 [main] INFO  com.parabank.tests.BaseTest - Step 2: Record the current balance of source account 13566.
+2026-08-10 15:06:48 [main] INFO  com.parabank.tests.BaseTest - Step 2 Passed: Balance before payment = $464.50.
+2026-08-10 15:06:48 [main] INFO  com.parabank.tests.BaseTest - Step 3: Navigate to Bill Pay, enter valid data and submit payment of $2.00.
+2026-08-10 15:06:51 [main] INFO  com.parabank.tests.BaseTest - Step 3 Passed: Bill payment completed successfully.
+2026-08-10 15:06:51 [main] INFO  com.parabank.tests.BaseTest - Step 4: Return to Accounts Overview and read the updated balance.
+2026-08-10 15:06:52 [main] INFO  com.parabank.tests.BaseTest - Step 4 Passed: Balance after payment = $462.50.
+2026-08-10 15:06:52 [main] INFO  com.parabank.tests.BaseTest - Step 5: Verify source-account balance decreased exactly by the paid amount.
+2026-08-10 15:06:52 [main] INFO  com.parabank.tests.BaseTest - Verification Passed: Balance changed from $464.50 to $462.50, exactly matching payment amount $2.00.
+2026-08-10 15:06:52 [main] INFO  com.parabank.listeners.TestListener - Test PASSED: pbAuto03_verifyAccountBalanceAfterSuccessfulBillPayment
+2026-08-10 15:06:56 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabank/index.htm
+2026-08-10 15:06:59 [main] INFO  com.parabank.listeners.TestListener - Test started: pbAuto04_verifyBillPaymentTransactionHistory
+2026-08-10 15:06:59 [main] INFO  com.parabank.tests.BaseTest - Step 1: Login to ParaBank using valid credentials.
+2026-08-10 15:07:00 [main] INFO  com.parabank.tests.BaseTest - Step 1 Passed: Login successful and Accounts Overview displayed.
+2026-08-10 15:07:01 [main] INFO  com.parabank.tests.BaseTest - Step 2: Navigate to Bill Pay and submit a valid payment. Payee=GuruTxnPayee, Amount=3.00, From Account=13566.
+2026-08-10 15:07:04 [main] INFO  com.parabank.tests.BaseTest - Step 2 Passed: Bill payment completed successfully.
+2026-08-10 15:07:04 [main] INFO  com.parabank.tests.BaseTest - Step 3: Return to Accounts Overview and open source account 13566.
+2026-08-10 15:07:05 [main] INFO  com.parabank.tests.BaseTest - Step 3 Passed: Account Details / Account Activity page opened.
+2026-08-10 15:07:05 [main] INFO  com.parabank.tests.BaseTest - Step 4: Verify the transaction-history table is displayed.
+2026-08-10 15:07:05 [main] INFO  com.parabank.tests.BaseTest - Verification Passed: Transaction-history table is displayed.
+2026-08-10 15:07:05 [main] INFO  com.parabank.tests.BaseTest - Step 5: Verify the newly created Bill Pay transaction contains the expected payee and debit amount.
+2026-08-10 15:07:06 [main] INFO  com.parabank.tests.BaseTest - Verification Passed: Transaction history contains Payee=GuruTxnPayee and Amount=$3.00.
+2026-08-10 15:07:06 [main] INFO  com.parabank.listeners.TestListener - Test PASSED: pbAuto04_verifyBillPaymentTransactionHistory
+2026-08-10 15:07:09 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabank/index.htm
+2026-08-10 15:07:11 [main] INFO  com.parabank.listeners.TestListener - Test started: pbAuto05_verifyPaymentAmountMandatoryValidation
+2026-08-10 15:07:11 [main] INFO  com.parabank.tests.BaseTest - Step 1: Login to ParaBank using valid credentials.
+2026-08-10 15:07:13 [main] INFO  com.parabank.tests.BaseTest - Step 1 Passed: Login successful and Accounts Overview displayed.
+2026-08-10 15:07:13 [main] INFO  com.parabank.tests.BaseTest - Step 2: Navigate to Bill Pay and enter valid payee/account details while leaving Amount blank.
+2026-08-10 15:07:15 [main] INFO  com.parabank.tests.BaseTest - Step 2 Passed: Valid Bill Pay data entered and Amount left blank.
+2026-08-10 15:07:15 [main] INFO  com.parabank.tests.BaseTest - Step 3: Click Send Payment.
+2026-08-10 15:07:15 [main] INFO  com.parabank.tests.BaseTest - Step 4: Verify Amount mandatory validation is displayed.
+2026-08-10 15:07:15 [main] INFO  com.parabank.tests.BaseTest - Verification Passed: Amount-required validation is displayed.
+2026-08-10 15:07:15 [main] INFO  com.parabank.tests.BaseTest - Step 5: Verify the visible validation message belongs to the Amount field.
+2026-08-10 15:07:15 [main] INFO  com.parabank.tests.BaseTest - Verification Passed: Amount validation message = 'The amount cannot be empty.'.
+2026-08-10 15:07:15 [main] INFO  com.parabank.listeners.TestListener - Test PASSED: pbAuto05_verifyPaymentAmountMandatoryValidation
+2026-08-10 15:07:16 [main] INFO  com.parabank.listeners.TestListener - ===== Suite finished: parabank-automation | Passed: 5 | Failed: 0 | Skipped: 0 =====
+2026-08-10 15:37:10 [main] INFO  com.parabank.listeners.TestListener - ===== Suite started: parabank-automation =====
+2026-08-10 15:37:15 [main] INFO  com.parabank.listeners.TestListener - ===== Suite started: parabank-automation =====
+2026-08-10 15:37:18 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabank/index.htm
+2026-08-10 15:37:21 [main] INFO  com.parabank.listeners.TestListener - Test started: pbAuto01_verifyEndToEndSuccessfulBillPayment
+2026-08-10 15:37:21 [main] INFO  com.parabank.tests.BaseTest - Step 1: Login to ParaBank using valid credentials.
+2026-08-10 15:37:24 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabank/index.htm
+2026-08-10 15:37:25 [main] INFO  com.parabank.tests.BaseTest - Step 1 Passed: Login successful and Accounts Overview displayed.
+2026-08-10 15:37:25 [main] INFO  com.parabank.tests.BaseTest - Step 2: Navigate to Bill Pay and enter valid payee/payment details. Payee=AutoPayee01, Amount=1.00, From Account=13566.
+2026-08-10 15:37:32 [main] INFO  com.parabank.listeners.TestListener - Test started: pbAuto01_verifyEndToEndSuccessfulBillPayment
+2026-08-10 15:37:32 [main] INFO  com.parabank.tests.BaseTest - Step 1: Login to ParaBank using valid credentials.
+2026-08-10 15:37:34 [main] INFO  com.parabank.tests.BaseTest - Step 2 Passed: Bill Pay form populated with valid test data.
+2026-08-10 15:37:34 [main] INFO  com.parabank.tests.BaseTest - Step 3: Click Send Payment.
+2026-08-10 15:37:35 [main] INFO  com.parabank.tests.BaseTest - Step 3 Passed: Bill Pay request submitted without a backend application error.
+2026-08-10 15:37:35 [main] INFO  com.parabank.tests.BaseTest - Step 4: Verify the Bill Payment Complete confirmation.
+2026-08-10 15:37:36 [main] INFO  com.parabank.tests.BaseTest - Step 1 Passed: Login successful and Accounts Overview displayed.
+2026-08-10 15:37:36 [main] INFO  com.parabank.tests.BaseTest - Step 2: Navigate to Bill Pay and enter valid payee/payment details. Payee=AutoPayee01, Amount=1.00, From Account=13566.
+2026-08-10 15:37:36 [main] INFO  com.parabank.tests.BaseTest - Verification Passed: Bill Payment Complete confirmation is displayed.
+2026-08-10 15:37:36 [main] INFO  com.parabank.tests.BaseTest - Step 5: Verify confirmation payee name, payment amount and source account.
+2026-08-10 15:37:37 [main] INFO  com.parabank.tests.BaseTest - Verification Passed: Payee=AutoPayee01, Amount=$1.00 and From Account=13566 are correct.
+2026-08-10 15:37:37 [main] INFO  com.parabank.listeners.TestListener - Test PASSED: pbAuto01_verifyEndToEndSuccessfulBillPayment
+2026-08-10 15:37:42 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabank/index.htm
+2026-08-10 15:37:44 [main] INFO  com.parabank.listeners.TestListener - Test started: pbAuto02_verifyAccountNumberMismatchValidation
+2026-08-10 15:37:44 [main] INFO  com.parabank.tests.BaseTest - Step 1: Login to ParaBank using valid credentials.
+2026-08-10 15:37:47 [main] INFO  com.parabank.tests.BaseTest - Step 2 Passed: Bill Pay form populated with valid test data.
+2026-08-10 15:37:47 [main] INFO  com.parabank.tests.BaseTest - Step 3: Click Send Payment.
+2026-08-10 15:37:48 [main] INFO  com.parabank.tests.BaseTest - Step 3 Passed: Bill Pay request submitted without a backend application error.
+2026-08-10 15:37:48 [main] INFO  com.parabank.tests.BaseTest - Step 4: Verify the Bill Payment Complete confirmation.
+2026-08-10 15:37:49 [main] INFO  com.parabank.tests.BaseTest - Step 1 Passed: Login successful and Accounts Overview displayed.
+2026-08-10 15:37:49 [main] INFO  com.parabank.tests.BaseTest - Verification Passed: Bill Payment Complete confirmation is displayed.
+2026-08-10 15:37:49 [main] INFO  com.parabank.tests.BaseTest - Step 5: Verify confirmation payee name, payment amount and source account.
+2026-08-10 15:37:49 [main] INFO  com.parabank.tests.BaseTest - Step 2: Navigate to Bill Pay and enter valid payee details with mismatching Account and Verify Account values. Account=154440, Verify Account=154441.
+2026-08-10 15:37:49 [main] INFO  com.parabank.tests.BaseTest - Verification Passed: Payee=AutoPayee01, Amount=$1.00 and From Account=13566 are correct.
+2026-08-10 15:37:49 [main] INFO  com.parabank.listeners.TestListener - Test PASSED: pbAuto01_verifyEndToEndSuccessfulBillPayment
+2026-08-10 15:37:56 [main] INFO  com.parabank.tests.BaseTest - Step 2 Passed: Mismatching account numbers and remaining valid data entered.
+2026-08-10 15:37:56 [main] INFO  com.parabank.tests.BaseTest - Step 3: Click Send Payment.
+2026-08-10 15:37:57 [main] INFO  com.parabank.tests.BaseTest - Step 4: Verify account-number mismatch validation is displayed.
+2026-08-10 15:37:57 [main] INFO  com.parabank.tests.BaseTest - Verification Passed: Account-number mismatch validation is displayed.
+2026-08-10 15:37:57 [main] INFO  com.parabank.tests.BaseTest - Step 5: Verify the mismatch validation message text.
+2026-08-10 15:37:57 [main] INFO  com.parabank.tests.BaseTest - Verification Passed: Validation message is 'The account numbers do not match.'.
+2026-08-10 15:37:57 [main] INFO  com.parabank.listeners.TestListener - Test PASSED: pbAuto02_verifyAccountNumberMismatchValidation
+2026-08-10 15:37:57 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabank/index.htm
+2026-08-10 15:38:00 [main] INFO  com.parabank.listeners.TestListener - Test started: pbAuto02_verifyAccountNumberMismatchValidation
+2026-08-10 15:38:00 [main] INFO  com.parabank.tests.BaseTest - Step 1: Login to ParaBank using valid credentials.
+2026-08-10 15:38:03 [main] INFO  com.parabank.tests.BaseTest - Step 1 Passed: Login successful and Accounts Overview displayed.
+2026-08-10 15:38:03 [main] INFO  com.parabank.tests.BaseTest - Step 2: Navigate to Bill Pay and enter valid payee details with mismatching Account and Verify Account values. Account=154440, Verify Account=154441.
+2026-08-10 15:38:06 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabank/index.htm
+2026-08-10 15:38:08 [main] INFO  com.parabank.listeners.TestListener - Test started: pbAuto03_verifyAccountBalanceAfterSuccessfulBillPayment
+2026-08-10 15:38:08 [main] INFO  com.parabank.tests.BaseTest - Step 1: Login to ParaBank using valid credentials.
+2026-08-10 15:38:10 [main] INFO  com.parabank.tests.BaseTest - Step 1 Passed: Login successful and Accounts Overview displayed.
+2026-08-10 15:38:11 [main] INFO  com.parabank.tests.BaseTest - Step 2: Record the current balance of source account 13566.
+2026-08-10 15:38:11 [main] INFO  com.parabank.tests.BaseTest - Step 2 Passed: Balance before payment = $457.50.
+2026-08-10 15:38:11 [main] INFO  com.parabank.tests.BaseTest - Step 3: Navigate to Bill Pay, enter valid data and submit payment of $2.00.
+2026-08-10 15:38:11 [main] INFO  com.parabank.tests.BaseTest - Step 2 Passed: Mismatching account numbers and remaining valid data entered.
+2026-08-10 15:38:11 [main] INFO  com.parabank.tests.BaseTest - Step 3: Click Send Payment.
+2026-08-10 15:38:11 [main] INFO  com.parabank.tests.BaseTest - Step 4: Verify account-number mismatch validation is displayed.
+2026-08-10 15:38:12 [main] INFO  com.parabank.tests.BaseTest - Verification Passed: Account-number mismatch validation is displayed.
+2026-08-10 15:38:12 [main] INFO  com.parabank.tests.BaseTest - Step 5: Verify the mismatch validation message text.
+2026-08-10 15:38:12 [main] INFO  com.parabank.tests.BaseTest - Verification Passed: Validation message is 'The account numbers do not match.'.
+2026-08-10 15:38:12 [main] INFO  com.parabank.listeners.TestListener - Test PASSED: pbAuto02_verifyAccountNumberMismatchValidation
+2026-08-10 15:38:22 [main] INFO  com.parabank.tests.BaseTest - Step 3 Passed: Bill payment completed successfully.
+2026-08-10 15:38:22 [main] INFO  com.parabank.tests.BaseTest - Step 4: Return to Accounts Overview and read the updated balance.
+2026-08-10 15:38:24 [main] INFO  com.parabank.tests.BaseTest - Step 4 Passed: Balance after payment = $455.50.
+2026-08-10 15:38:24 [main] INFO  com.parabank.tests.BaseTest - Step 5: Verify source-account balance decreased exactly by the paid amount.
+2026-08-10 15:38:24 [main] INFO  com.parabank.tests.BaseTest - Verification Passed: Balance changed from $457.50 to $455.50, exactly matching payment amount $2.00.
+2026-08-10 15:38:24 [main] INFO  com.parabank.listeners.TestListener - Test PASSED: pbAuto03_verifyAccountBalanceAfterSuccessfulBillPayment
+2026-08-10 15:38:27 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabank/index.htm
+2026-08-10 15:38:30 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabank/index.htm
+2026-08-10 15:38:30 [main] INFO  com.parabank.listeners.TestListener - Test started: pbAuto04_verifyBillPaymentTransactionHistory
+2026-08-10 15:38:30 [main] INFO  com.parabank.tests.BaseTest - Step 1: Login to ParaBank using valid credentials.
+2026-08-10 15:38:31 [main] INFO  com.parabank.listeners.TestListener - Test started: pbAuto03_verifyAccountBalanceAfterSuccessfulBillPayment
+2026-08-10 15:38:31 [main] INFO  com.parabank.tests.BaseTest - Step 1: Login to ParaBank using valid credentials.
+2026-08-10 15:38:35 [main] INFO  com.parabank.tests.BaseTest - Step 1 Passed: Login successful and Accounts Overview displayed.
+2026-08-10 15:38:35 [main] INFO  com.parabank.tests.BaseTest - Step 1 Passed: Login successful and Accounts Overview displayed.
+2026-08-10 15:38:35 [main] INFO  com.parabank.tests.BaseTest - Step 2: Record the current balance of source account 13566.
+2026-08-10 15:38:35 [main] INFO  com.parabank.tests.BaseTest - Step 2: Navigate to Bill Pay and submit a valid payment. Payee=GuruTxnPayee, Amount=3.00, From Account=13566.
+2026-08-10 15:38:36 [main] INFO  com.parabank.tests.BaseTest - Step 2 Passed: Balance before payment = $455.50.
+2026-08-10 15:38:36 [main] INFO  com.parabank.tests.BaseTest - Step 3: Navigate to Bill Pay, enter valid data and submit payment of $2.00.
+2026-08-10 15:38:42 [main] INFO  com.parabank.tests.BaseTest - Step 2 Passed: Bill payment completed successfully.
+2026-08-10 15:38:42 [main] INFO  com.parabank.tests.BaseTest - Step 3: Return to Accounts Overview and open source account 13566.
+2026-08-10 15:38:47 [main] INFO  com.parabank.tests.BaseTest - Step 3 Passed: Account Details / Account Activity page opened.
+2026-08-10 15:38:47 [main] INFO  com.parabank.tests.BaseTest - Step 4: Verify the transaction-history table is displayed.
+2026-08-10 15:38:47 [main] INFO  com.parabank.tests.BaseTest - Verification Passed: Transaction-history table is displayed.
+2026-08-10 15:38:47 [main] INFO  com.parabank.tests.BaseTest - Step 5: Verify the newly created Bill Pay transaction contains the expected payee and debit amount.
+2026-08-10 15:38:47 [main] INFO  com.parabank.tests.BaseTest - Verification Passed: Transaction history contains Payee=GuruTxnPayee and Amount=$3.00.
+2026-08-10 15:38:47 [main] INFO  com.parabank.listeners.TestListener - Test PASSED: pbAuto04_verifyBillPaymentTransactionHistory
+2026-08-10 15:38:47 [main] INFO  com.parabank.tests.BaseTest - Step 3 Passed: Bill payment completed successfully.
+2026-08-10 15:38:47 [main] INFO  com.parabank.tests.BaseTest - Step 4: Return to Accounts Overview and read the updated balance.
+2026-08-10 15:38:49 [main] INFO  com.parabank.tests.BaseTest - Step 4 Passed: Balance after payment = $450.50.
+2026-08-10 15:38:49 [main] INFO  com.parabank.tests.BaseTest - Step 5: Verify source-account balance decreased exactly by the paid amount.
+2026-08-10 15:38:49 [main] ERROR com.parabank.listeners.TestListener - Test FAILED: pbAuto03_verifyAccountBalanceAfterSuccessfulBillPayment
+java.lang.AssertionError: Source-account balance was not reduced by exactly the paid amount. expected [453.5] but found [450.5]
+	at org.testng.Assert.fail(Assert.java:111) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.Assert.failNotEquals(Assert.java:1578) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.Assert.assertEquals(Assert.java:698) ~[testng-7.10.2.jar:7.10.2]
+	at com.parabank.tests.BillPayTest.pbAuto03_verifyAccountBalanceAfterSuccessfulBillPayment(BillPayTest.java:167) ~[test-classes/:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134) ~[testng-7.10.2.jar:7.10.2]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596) [?:?]
+	at org.testng.TestRunner.privateRun(TestRunner.java:739) [testng-7.10.2.jar:7.10.2]
+	at org.testng.TestRunner.run(TestRunner.java:614) [testng-7.10.2.jar:7.10.2]
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421) [testng-7.10.2.jar:7.10.2]
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413) [testng-7.10.2.jar:7.10.2]
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373) [testng-7.10.2.jar:7.10.2]
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312) [testng-7.10.2.jar:7.10.2]
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52) [testng-7.10.2.jar:7.10.2]
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95) [testng-7.10.2.jar:7.10.2]
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274) [testng-7.10.2.jar:7.10.2]
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208) [testng-7.10.2.jar:7.10.2]
+	at org.testng.TestNG.runSuites(TestNG.java:1112) [testng-7.10.2.jar:7.10.2]
+	at org.testng.TestNG.run(TestNG.java:1079) [testng-7.10.2.jar:7.10.2]
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:65) [testng-rt.jar:?]
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:105) [testng-rt.jar:?]
+2026-08-10 15:38:49 [main] INFO  com.parabank.tests.BaseTest - Screenshot saved: test-output/screenshots/pbAuto03_verifyAccountBalanceAfterSuccessfulBillPayment_1786356529626.png
+2026-08-10 15:38:49 [main] ERROR com.parabank.tests.BaseTest - Test FAILED: pbAuto03_verifyAccountBalanceAfterSuccessfulBillPayment
+2026-08-10 15:38:55 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabank/index.htm
+2026-08-10 15:38:55 [main] INFO  com.parabank.listeners.TestListener - Test started: pbAuto04_verifyBillPaymentTransactionHistory
+2026-08-10 15:38:55 [main] WARN  com.parabank.listeners.TestListener - Test SKIPPED: pbAuto04_verifyBillPaymentTransactionHistory
+2026-08-10 15:38:56 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabank/index.htm
+2026-08-10 15:38:56 [main] INFO  com.parabank.listeners.TestListener - Test started: pbAuto05_verifyPaymentAmountMandatoryValidation
+2026-08-10 15:38:56 [main] WARN  com.parabank.listeners.TestListener - Test SKIPPED: pbAuto05_verifyPaymentAmountMandatoryValidation
+2026-08-10 15:38:57 [main] INFO  com.parabank.listeners.TestListener - ===== Suite finished: parabank-automation | Passed: 4 | Failed: 0 | Skipped: 1 =====
+2026-08-10 15:38:59 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabank/index.htm
+2026-08-10 15:38:59 [main] INFO  com.parabank.listeners.TestListener - Test started: pbAuto05_verifyPaymentAmountMandatoryValidation
+2026-08-10 15:38:59 [main] WARN  com.parabank.listeners.TestListener - Test SKIPPED: pbAuto05_verifyPaymentAmountMandatoryValidation
+2026-08-10 15:38:59 [main] INFO  com.parabank.listeners.TestListener - ===== Suite finished: parabank-automation | Passed: 2 | Failed: 1 | Skipped: 2 =====
+2026-08-10 15:40:30 [main] INFO  com.parabank.listeners.TestListener - ===== Suite started: parabank-automation =====
+2026-08-10 15:40:41 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabank/index.htm
+2026-08-10 15:40:42 [main] INFO  com.parabank.listeners.TestListener - Test started: pbAuto01_verifyEndToEndSuccessfulBillPayment
+2026-08-10 15:40:42 [main] INFO  com.parabank.tests.BaseTest - Step 1: Login to ParaBank using valid credentials.
+2026-08-10 15:41:05 [main] ERROR com.parabank.listeners.TestListener - Test FAILED: pbAuto01_verifyEndToEndSuccessfulBillPayment
+org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.id: accountTable (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.23.0', revision: '4df0a231af'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.10'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 151.0.7922.77, chrome: {chromedriverVersion: 151.0.7922.77 (ff37cfca2101..., userDataDir: C:\Users\GURUKR~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61528}, goog:processID: 20976, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61528/devtoo..., se:cdpVersion: 151.0.7922.77, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 69f192dff5f8b39aca0139f954ac9ec6
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84) ~[selenium-support-4.23.0.jar:?]
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228) ~[selenium-support-4.23.0.jar:?]
+	at com.parabank.utils.WaitUtils.waitForVisible(WaitUtils.java:23) ~[classes/:?]
+	at com.parabank.pages.BillPayAccountOverviewPage.waitUntilLoaded(BillPayAccountOverviewPage.java:26) ~[classes/:?]
+	at com.parabank.tests.BillPayTest.loginAndGetOverview(BillPayTest.java:249) ~[test-classes/:?]
+	at com.parabank.tests.BillPayTest.pbAuto01_verifyEndToEndSuccessfulBillPayment(BillPayTest.java:74) ~[test-classes/:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134) ~[testng-7.10.2.jar:7.10.2]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596) [?:?]
+	at org.testng.TestRunner.privateRun(TestRunner.java:739) [testng-7.10.2.jar:7.10.2]
+	at org.testng.TestRunner.run(TestRunner.java:614) [testng-7.10.2.jar:7.10.2]
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421) [testng-7.10.2.jar:7.10.2]
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413) [testng-7.10.2.jar:7.10.2]
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373) [testng-7.10.2.jar:7.10.2]
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312) [testng-7.10.2.jar:7.10.2]
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52) [testng-7.10.2.jar:7.10.2]
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95) [testng-7.10.2.jar:7.10.2]
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274) [testng-7.10.2.jar:7.10.2]
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208) [testng-7.10.2.jar:7.10.2]
+	at org.testng.TestNG.runSuites(TestNG.java:1112) [testng-7.10.2.jar:7.10.2]
+	at org.testng.TestNG.run(TestNG.java:1079) [testng-7.10.2.jar:7.10.2]
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:65) [testng-rt.jar:?]
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:105) [testng-rt.jar:?]
+2026-08-10 15:41:05 [main] INFO  com.parabank.tests.BaseTest - Screenshot saved: test-output/screenshots/pbAuto01_verifyEndToEndSuccessfulBillPayment_1786356665646.png
+2026-08-10 15:41:05 [main] ERROR com.parabank.tests.BaseTest - Test FAILED: pbAuto01_verifyEndToEndSuccessfulBillPayment
+2026-08-10 15:41:08 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabank/index.htm
+2026-08-10 15:41:09 [main] INFO  com.parabank.listeners.TestListener - Test started: pbAuto02_verifyAccountNumberMismatchValidation
+2026-08-10 15:41:09 [main] INFO  com.parabank.tests.BaseTest - Step 1: Login to ParaBank using valid credentials.
+2026-08-10 15:41:13 [main] ERROR com.parabank.listeners.TestListener - Could not capture screenshot for report: invalid session id
+Build info: version: '4.23.0', revision: '4df0a231af'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.10'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [de07a3ffdabcf4fab310bdfdecb4f06d, screenshot {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 151.0.7922.77, chrome: {chromedriverVersion: 151.0.7922.77 (ff37cfca2101..., userDataDir: C:\Users\GURUKR~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55310}, goog:processID: 21064, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55310/devtoo..., se:cdpVersion: 151.0.7922.77, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: de07a3ffdabcf4fab310bdfdecb4f06d
+2026-08-10 15:41:13 [main] ERROR com.parabank.listeners.TestListener - Test FAILED: pbAuto02_verifyAccountNumberMismatchValidation
+org.openqa.selenium.NoSuchSessionException: invalid session id: session deleted as the browser has closed the connection
+from disconnected: unable to send message to renderer
+  (Session info: chrome=151.0.7922.77)
+Build info: version: '4.23.0', revision: '4df0a231af'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.10'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [de07a3ffdabcf4fab310bdfdecb4f06d, findElement {value=accountTable, using=id}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 151.0.7922.77, chrome: {chromedriverVersion: 151.0.7922.77 (ff37cfca2101..., userDataDir: C:\Users\GURUKR~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55310}, goog:processID: 21064, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55310/devtoo..., se:cdpVersion: 151.0.7922.77, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: de07a3ffdabcf4fab310bdfdecb4f06d
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486) ~[?:?]
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167) ~[selenium-remote-driver-4.23.0.jar:?]
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138) ~[selenium-remote-driver-4.23.0.jar:?]
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50) ~[selenium-remote-driver-4.23.0.jar:?]
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190) ~[selenium-remote-driver-4.23.0.jar:?]
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216) ~[selenium-remote-driver-4.23.0.jar:?]
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174) ~[selenium-remote-driver-4.23.0.jar:?]
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:527) ~[selenium-remote-driver-4.23.0.jar:?]
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165) ~[selenium-remote-driver-4.23.0.jar:?]
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:66) ~[selenium-remote-driver-4.23.0.jar:?]
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357) ~[selenium-remote-driver-4.23.0.jar:?]
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:351) ~[selenium-remote-driver-4.23.0.jar:?]
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:194) ~[selenium-support-4.23.0.jar:?]
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:190) ~[selenium-support-4.23.0.jar:?]
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203) ~[selenium-support-4.23.0.jar:?]
+	at com.parabank.utils.WaitUtils.waitForVisible(WaitUtils.java:23) ~[classes/:?]
+	at com.parabank.pages.BillPayAccountOverviewPage.waitUntilLoaded(BillPayAccountOverviewPage.java:26) ~[classes/:?]
+	at com.parabank.tests.BillPayTest.loginAndGetOverview(BillPayTest.java:249) ~[test-classes/:?]
+	at com.parabank.tests.BillPayTest.pbAuto02_verifyAccountNumberMismatchValidation(BillPayTest.java:112) ~[test-classes/:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134) ~[testng-7.10.2.jar:7.10.2]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596) [?:?]
+	at org.testng.TestRunner.privateRun(TestRunner.java:739) [testng-7.10.2.jar:7.10.2]
+	at org.testng.TestRunner.run(TestRunner.java:614) [testng-7.10.2.jar:7.10.2]
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421) [testng-7.10.2.jar:7.10.2]
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413) [testng-7.10.2.jar:7.10.2]
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373) [testng-7.10.2.jar:7.10.2]
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312) [testng-7.10.2.jar:7.10.2]
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52) [testng-7.10.2.jar:7.10.2]
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95) [testng-7.10.2.jar:7.10.2]
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274) [testng-7.10.2.jar:7.10.2]
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208) [testng-7.10.2.jar:7.10.2]
+	at org.testng.TestNG.runSuites(TestNG.java:1112) [testng-7.10.2.jar:7.10.2]
+	at org.testng.TestNG.run(TestNG.java:1079) [testng-7.10.2.jar:7.10.2]
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:65) [testng-rt.jar:?]
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:105) [testng-rt.jar:?]
+2026-08-10 15:41:13 [main] ERROR com.parabank.tests.BaseTest - Failed to capture screenshot: invalid session id
+Build info: version: '4.23.0', revision: '4df0a231af'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.10'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [de07a3ffdabcf4fab310bdfdecb4f06d, screenshot {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 151.0.7922.77, chrome: {chromedriverVersion: 151.0.7922.77 (ff37cfca2101..., userDataDir: C:\Users\GURUKR~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55310}, goog:processID: 21064, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55310/devtoo..., se:cdpVersion: 151.0.7922.77, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: de07a3ffdabcf4fab310bdfdecb4f06d
+2026-08-10 15:41:13 [main] ERROR com.parabank.tests.BaseTest - Test FAILED: pbAuto02_verifyAccountNumberMismatchValidation
+2026-08-10 15:41:16 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabank/index.htm
+2026-08-10 15:41:16 [main] INFO  com.parabank.listeners.TestListener - Test started: pbAuto03_verifyAccountBalanceAfterSuccessfulBillPayment
+2026-08-10 15:41:16 [main] WARN  com.parabank.listeners.TestListener - Test SKIPPED: pbAuto03_verifyAccountBalanceAfterSuccessfulBillPayment
+2026-08-10 15:41:19 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabank/index.htm
+2026-08-10 15:41:19 [main] INFO  com.parabank.listeners.TestListener - Test started: pbAuto04_verifyBillPaymentTransactionHistory
+2026-08-10 15:41:19 [main] WARN  com.parabank.listeners.TestListener - Test SKIPPED: pbAuto04_verifyBillPaymentTransactionHistory
+2026-08-10 15:41:22 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabank/index.htm
+2026-08-10 15:41:22 [main] INFO  com.parabank.listeners.TestListener - Test started: pbAuto05_verifyPaymentAmountMandatoryValidation
+2026-08-10 15:41:22 [main] WARN  com.parabank.listeners.TestListener - Test SKIPPED: pbAuto05_verifyPaymentAmountMandatoryValidation
+2026-08-10 15:41:23 [main] INFO  com.parabank.listeners.TestListener - ===== Suite finished: parabank-automation | Passed: 0 | Failed: 2 | Skipped: 3 =====
+2026-08-10 15:44:28 [main] INFO  com.parabank.listeners.TestListener - ===== Suite started: parabank-automation =====
+2026-08-10 15:44:33 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabankv2/index.htm
+2026-08-10 15:44:35 [main] INFO  com.parabank.listeners.TestListener - Test started: pbAuto01_verifyEndToEndSuccessfulBillPayment
+2026-08-10 15:44:35 [main] INFO  com.parabank.tests.BaseTest - Step 1: Login to ParaBank using valid credentials.
+2026-08-10 15:44:37 [main] INFO  com.parabank.tests.BaseTest - Step 1 Passed: Login successful and Accounts Overview displayed.
+2026-08-10 15:44:37 [main] INFO  com.parabank.tests.BaseTest - Step 2: Navigate to Bill Pay and enter valid payee/payment details. Payee=AutoPayee01, Amount=1.00, From Account=13566.
+2026-08-10 15:44:40 [main] INFO  com.parabank.tests.BaseTest - Step 2 Passed: Bill Pay form populated with valid test data.
+2026-08-10 15:44:40 [main] INFO  com.parabank.tests.BaseTest - Step 3: Click Send Payment.
+2026-08-10 15:44:40 [main] INFO  com.parabank.tests.BaseTest - Step 3 Passed: Bill Pay request submitted without a backend application error.
+2026-08-10 15:44:40 [main] INFO  com.parabank.tests.BaseTest - Step 4: Verify the Bill Payment Complete confirmation.
+2026-08-10 15:44:41 [main] INFO  com.parabank.tests.BaseTest - Verification Passed: Bill Payment Complete confirmation is displayed.
+2026-08-10 15:44:41 [main] INFO  com.parabank.tests.BaseTest - Step 5: Verify confirmation payee name, payment amount and source account.
+2026-08-10 15:44:41 [main] INFO  com.parabank.tests.BaseTest - Verification Passed: Payee=AutoPayee01, Amount=$1.00 and From Account=13566 are correct.
+2026-08-10 15:44:41 [main] INFO  com.parabank.listeners.TestListener - Test PASSED: pbAuto01_verifyEndToEndSuccessfulBillPayment
+2026-08-10 15:44:43 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabankv2/index.htm
+2026-08-10 15:44:44 [main] INFO  com.parabank.listeners.TestListener - Test started: pbAuto02_verifyAccountNumberMismatchValidation
+2026-08-10 15:44:44 [main] INFO  com.parabank.tests.BaseTest - Step 1: Login to ParaBank using valid credentials.
+2026-08-10 15:44:46 [main] INFO  com.parabank.tests.BaseTest - Step 1 Passed: Login successful and Accounts Overview displayed.
+2026-08-10 15:44:46 [main] INFO  com.parabank.tests.BaseTest - Step 2: Navigate to Bill Pay and enter valid payee details with mismatching Account and Verify Account values. Account=154440, Verify Account=154441.
+2026-08-10 15:44:49 [main] INFO  com.parabank.tests.BaseTest - Step 2 Passed: Mismatching account numbers and remaining valid data entered.
+2026-08-10 15:44:49 [main] INFO  com.parabank.tests.BaseTest - Step 3: Click Send Payment.
+2026-08-10 15:44:49 [main] INFO  com.parabank.tests.BaseTest - Step 4: Verify account-number mismatch validation is displayed.
+2026-08-10 15:44:49 [main] INFO  com.parabank.tests.BaseTest - Verification Passed: Account-number mismatch validation is displayed.
+2026-08-10 15:44:49 [main] INFO  com.parabank.tests.BaseTest - Step 5: Verify the mismatch validation message text.
+2026-08-10 15:44:49 [main] INFO  com.parabank.tests.BaseTest - Verification Passed: Validation message is 'The account numbers do not match.'.
+2026-08-10 15:44:49 [main] INFO  com.parabank.listeners.TestListener - Test PASSED: pbAuto02_verifyAccountNumberMismatchValidation
+2026-08-10 15:44:52 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabankv2/index.htm
+2026-08-10 15:44:53 [main] INFO  com.parabank.listeners.TestListener - Test started: pbAuto03_verifyAccountBalanceAfterSuccessfulBillPayment
+2026-08-10 15:44:53 [main] INFO  com.parabank.tests.BaseTest - Step 1: Login to ParaBank using valid credentials.
+2026-08-10 15:44:54 [main] INFO  com.parabank.tests.BaseTest - Step 1 Passed: Login successful and Accounts Overview displayed.
+2026-08-10 15:44:55 [main] INFO  com.parabank.tests.BaseTest - Step 2: Record the current balance of source account 13566.
+2026-08-10 15:44:55 [main] INFO  com.parabank.tests.BaseTest - Step 2 Passed: Balance before payment = $449.50.
+2026-08-10 15:44:55 [main] INFO  com.parabank.tests.BaseTest - Step 3: Navigate to Bill Pay, enter valid data and submit payment of $2.00.
+2026-08-10 15:44:58 [main] INFO  com.parabank.tests.BaseTest - Step 3 Passed: Bill payment completed successfully.
+2026-08-10 15:44:58 [main] INFO  com.parabank.tests.BaseTest - Step 4: Return to Accounts Overview and read the updated balance.
+2026-08-10 15:44:59 [main] INFO  com.parabank.tests.BaseTest - Step 4 Passed: Balance after payment = $447.50.
+2026-08-10 15:44:59 [main] INFO  com.parabank.tests.BaseTest - Step 5: Verify source-account balance decreased exactly by the paid amount.
+2026-08-10 15:44:59 [main] INFO  com.parabank.tests.BaseTest - Verification Passed: Balance changed from $449.50 to $447.50, exactly matching payment amount $2.00.
+2026-08-10 15:44:59 [main] INFO  com.parabank.listeners.TestListener - Test PASSED: pbAuto03_verifyAccountBalanceAfterSuccessfulBillPayment
+2026-08-10 15:45:02 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabankv2/index.htm
+2026-08-10 15:45:03 [main] INFO  com.parabank.listeners.TestListener - Test started: pbAuto04_verifyBillPaymentTransactionHistory
+2026-08-10 15:45:03 [main] INFO  com.parabank.tests.BaseTest - Step 1: Login to ParaBank using valid credentials.
+2026-08-10 15:45:04 [main] INFO  com.parabank.tests.BaseTest - Step 1 Passed: Login successful and Accounts Overview displayed.
+2026-08-10 15:45:05 [main] INFO  com.parabank.tests.BaseTest - Step 2: Navigate to Bill Pay and submit a valid payment. Payee=GuruTxnPayee, Amount=3.00, From Account=13566.
+2026-08-10 15:45:08 [main] INFO  com.parabank.tests.BaseTest - Step 2 Passed: Bill payment completed successfully.
+2026-08-10 15:45:08 [main] INFO  com.parabank.tests.BaseTest - Step 3: Return to Accounts Overview and open source account 13566.
+2026-08-10 15:45:10 [main] INFO  com.parabank.tests.BaseTest - Step 3 Passed: Account Details / Account Activity page opened.
+2026-08-10 15:45:10 [main] INFO  com.parabank.tests.BaseTest - Step 4: Verify the transaction-history table is displayed.
+2026-08-10 15:45:10 [main] INFO  com.parabank.tests.BaseTest - Verification Passed: Transaction-history table is displayed.
+2026-08-10 15:45:10 [main] INFO  com.parabank.tests.BaseTest - Step 5: Verify the newly created Bill Pay transaction contains the expected payee and debit amount.
+2026-08-10 15:45:10 [main] INFO  com.parabank.tests.BaseTest - Verification Passed: Transaction history contains Payee=GuruTxnPayee and Amount=$3.00.
+2026-08-10 15:45:10 [main] INFO  com.parabank.listeners.TestListener - Test PASSED: pbAuto04_verifyBillPaymentTransactionHistory
+2026-08-10 15:45:14 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabankv2/index.htm
+2026-08-10 15:45:15 [main] INFO  com.parabank.listeners.TestListener - Test started: pbAuto05_verifyPaymentAmountMandatoryValidation
+2026-08-10 15:45:15 [main] INFO  com.parabank.tests.BaseTest - Step 1: Login to ParaBank using valid credentials.
+2026-08-10 15:45:17 [main] INFO  com.parabank.tests.BaseTest - Step 1 Passed: Login successful and Accounts Overview displayed.
+2026-08-10 15:45:17 [main] INFO  com.parabank.tests.BaseTest - Step 2: Navigate to Bill Pay and enter valid payee/account details while leaving Amount blank.
+2026-08-10 15:45:19 [main] INFO  com.parabank.tests.BaseTest - Step 2 Passed: Valid Bill Pay data entered and Amount left blank.
+2026-08-10 15:45:19 [main] INFO  com.parabank.tests.BaseTest - Step 3: Click Send Payment.
+2026-08-10 15:45:19 [main] INFO  com.parabank.tests.BaseTest - Step 4: Verify Amount mandatory validation is displayed.
+2026-08-10 15:45:19 [main] INFO  com.parabank.tests.BaseTest - Verification Passed: Amount-required validation is displayed.
+2026-08-10 15:45:19 [main] INFO  com.parabank.tests.BaseTest - Step 5: Verify the visible validation message belongs to the Amount field.
+2026-08-10 15:45:19 [main] INFO  com.parabank.tests.BaseTest - Verification Passed: Amount validation message = 'The amount cannot be empty.'.
+2026-08-10 15:45:19 [main] INFO  com.parabank.listeners.TestListener - Test PASSED: pbAuto05_verifyPaymentAmountMandatoryValidation
+2026-08-10 15:45:20 [main] INFO  com.parabank.listeners.TestListener - ===== Suite finished: parabank-automation | Passed: 5 | Failed: 0 | Skipped: 0 =====
+2026-08-10 16:17:47 [main] INFO  com.parabank.listeners.TestListener - ===== Suite started: parabank-automation =====
+2026-08-10 16:17:52 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabankv2/index.htm
+2026-08-10 16:17:53 [main] INFO  com.parabank.listeners.TestListener - Test started: pbAuto01_verifyEndToEndSuccessfulBillPayment
+2026-08-10 16:17:53 [main] INFO  com.parabank.tests.BaseTest - Step 1: Login to ParaBank using valid credentials.
+2026-08-10 16:17:55 [main] INFO  com.parabank.tests.BaseTest - Step 1 Passed: Login successful and Accounts Overview displayed.
+2026-08-10 16:17:56 [main] INFO  com.parabank.tests.BaseTest - Step 2: Navigate to Bill Pay and enter valid payee/payment details. Payee=AutoPayee01, Amount=1.00, From Account=12345.
+2026-08-10 16:17:58 [main] INFO  com.parabank.tests.BaseTest - Step 2 Passed: Bill Pay form populated with valid test data.
+2026-08-10 16:17:58 [main] INFO  com.parabank.tests.BaseTest - Step 3: Click Send Payment.
+2026-08-10 16:17:59 [main] INFO  com.parabank.tests.BaseTest - Step 3 Passed: Bill Pay request submitted without a backend application error.
+2026-08-10 16:17:59 [main] INFO  com.parabank.tests.BaseTest - Step 4: Verify the Bill Payment Complete confirmation.
+2026-08-10 16:17:59 [main] INFO  com.parabank.tests.BaseTest - Verification Passed: Bill Payment Complete confirmation is displayed.
+2026-08-10 16:17:59 [main] INFO  com.parabank.tests.BaseTest - Step 5: Verify confirmation payee name, payment amount and source account.
+2026-08-10 16:17:59 [main] INFO  com.parabank.tests.BaseTest - Verification Passed: Payee=AutoPayee01, Amount=$1.00 and From Account=12345 are correct.
+2026-08-10 16:17:59 [main] INFO  com.parabank.listeners.TestListener - Test PASSED: pbAuto01_verifyEndToEndSuccessfulBillPayment
+2026-08-10 16:18:03 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabankv2/index.htm
+2026-08-10 16:18:03 [main] INFO  com.parabank.listeners.TestListener - Test started: pbAuto02_verifyAccountNumberMismatchValidation
+2026-08-10 16:18:03 [main] INFO  com.parabank.tests.BaseTest - Step 1: Login to ParaBank using valid credentials.
+2026-08-10 16:18:05 [main] INFO  com.parabank.tests.BaseTest - Step 1 Passed: Login successful and Accounts Overview displayed.
+2026-08-10 16:18:05 [main] INFO  com.parabank.tests.BaseTest - Step 2: Navigate to Bill Pay and enter valid payee details with mismatching Account and Verify Account values. Account=154440, Verify Account=154441.
+2026-08-10 16:18:08 [main] INFO  com.parabank.tests.BaseTest - Step 2 Passed: Mismatching account numbers and remaining valid data entered.
+2026-08-10 16:18:08 [main] INFO  com.parabank.tests.BaseTest - Step 3: Click Send Payment.
+2026-08-10 16:18:08 [main] INFO  com.parabank.tests.BaseTest - Step 4: Verify account-number mismatch validation is displayed.
+2026-08-10 16:18:08 [main] INFO  com.parabank.tests.BaseTest - Verification Passed: Account-number mismatch validation is displayed.
+2026-08-10 16:18:08 [main] INFO  com.parabank.tests.BaseTest - Step 5: Verify the mismatch validation message text.
+2026-08-10 16:18:08 [main] INFO  com.parabank.tests.BaseTest - Verification Passed: Validation message is 'The account numbers do not match.'.
+2026-08-10 16:18:08 [main] INFO  com.parabank.listeners.TestListener - Test PASSED: pbAuto02_verifyAccountNumberMismatchValidation
+2026-08-10 16:18:12 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabankv2/index.htm
+2026-08-10 16:18:12 [main] INFO  com.parabank.listeners.TestListener - Test started: pbAuto03_verifyAccountBalanceAfterSuccessfulBillPayment
+2026-08-10 16:18:12 [main] INFO  com.parabank.tests.BaseTest - Step 1: Login to ParaBank using valid credentials.
+2026-08-10 16:18:14 [main] INFO  com.parabank.tests.BaseTest - Step 1 Passed: Login successful and Accounts Overview displayed.
+2026-08-10 16:18:14 [main] INFO  com.parabank.tests.BaseTest - Step 2: Record the current balance of source account 12345.
+2026-08-10 16:18:14 [main] INFO  com.parabank.tests.BaseTest - Step 2 Passed: Balance before payment = $-2313.00.
+2026-08-10 16:18:14 [main] INFO  com.parabank.tests.BaseTest - Step 3: Navigate to Bill Pay, enter valid data and submit payment of $2.00.
+2026-08-10 16:18:18 [main] INFO  com.parabank.tests.BaseTest - Step 3 Passed: Bill payment completed successfully.
+2026-08-10 16:18:18 [main] INFO  com.parabank.tests.BaseTest - Step 4: Return to Accounts Overview and read the updated balance.
+2026-08-10 16:18:19 [main] INFO  com.parabank.tests.BaseTest - Step 4 Passed: Balance after payment = $-2315.00.
+2026-08-10 16:18:19 [main] INFO  com.parabank.tests.BaseTest - Step 5: Verify source-account balance decreased exactly by the paid amount.
+2026-08-10 16:18:19 [main] INFO  com.parabank.tests.BaseTest - Verification Passed: Balance changed from $-2313.00 to $-2315.00, exactly matching payment amount $2.00.
+2026-08-10 16:18:19 [main] INFO  com.parabank.listeners.TestListener - Test PASSED: pbAuto03_verifyAccountBalanceAfterSuccessfulBillPayment
+2026-08-10 16:18:22 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabankv2/index.htm
+2026-08-10 16:18:22 [main] INFO  com.parabank.listeners.TestListener - Test started: pbAuto04_verifyBillPaymentTransactionHistory
+2026-08-10 16:18:22 [main] INFO  com.parabank.tests.BaseTest - Step 1: Login to ParaBank using valid credentials.
+2026-08-10 16:18:23 [main] INFO  com.parabank.tests.BaseTest - Step 1 Passed: Login successful and Accounts Overview displayed.
+2026-08-10 16:18:23 [main] INFO  com.parabank.tests.BaseTest - Step 2: Navigate to Bill Pay and submit a valid payment. Payee=GuruTxnPayee, Amount=3.00, From Account=12345.
+2026-08-10 16:18:27 [main] INFO  com.parabank.tests.BaseTest - Step 2 Passed: Bill payment completed successfully.
+2026-08-10 16:18:27 [main] INFO  com.parabank.tests.BaseTest - Step 3: Return to Accounts Overview and open source account 12345.
+2026-08-10 16:18:29 [main] INFO  com.parabank.tests.BaseTest - Step 3 Passed: Account Details / Account Activity page opened.
+2026-08-10 16:18:29 [main] INFO  com.parabank.tests.BaseTest - Step 4: Verify the transaction-history table is displayed.
+2026-08-10 16:18:29 [main] INFO  com.parabank.tests.BaseTest - Verification Passed: Transaction-history table is displayed.
+2026-08-10 16:18:29 [main] INFO  com.parabank.tests.BaseTest - Step 5: Verify the newly created Bill Pay transaction contains the expected payee and debit amount.
+2026-08-10 16:18:29 [main] INFO  com.parabank.tests.BaseTest - Verification Passed: Transaction history contains Payee=GuruTxnPayee and Amount=$3.00.
+2026-08-10 16:18:29 [main] INFO  com.parabank.listeners.TestListener - Test PASSED: pbAuto04_verifyBillPaymentTransactionHistory
+2026-08-10 16:18:33 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabankv2/index.htm
+2026-08-10 16:18:33 [main] INFO  com.parabank.listeners.TestListener - Test started: pbAuto05_verifyPaymentAmountMandatoryValidation
+2026-08-10 16:18:33 [main] INFO  com.parabank.tests.BaseTest - Step 1: Login to ParaBank using valid credentials.
+2026-08-10 16:18:35 [main] INFO  com.parabank.tests.BaseTest - Step 1 Passed: Login successful and Accounts Overview displayed.
+2026-08-10 16:18:35 [main] INFO  com.parabank.tests.BaseTest - Step 2: Navigate to Bill Pay and enter valid payee/account details while leaving Amount blank.
+2026-08-10 16:18:37 [main] INFO  com.parabank.tests.BaseTest - Step 2 Passed: Valid Bill Pay data entered and Amount left blank.
+2026-08-10 16:18:37 [main] INFO  com.parabank.tests.BaseTest - Step 3: Click Send Payment.
+2026-08-10 16:18:37 [main] INFO  com.parabank.tests.BaseTest - Step 4: Verify Amount mandatory validation is displayed.
+2026-08-10 16:18:37 [main] INFO  com.parabank.tests.BaseTest - Verification Passed: Amount-required validation is displayed.
+2026-08-10 16:18:37 [main] INFO  com.parabank.tests.BaseTest - Step 5: Verify the visible validation message belongs to the Amount field.
+2026-08-10 16:18:37 [main] INFO  com.parabank.tests.BaseTest - Verification Passed: Amount validation message = 'The amount cannot be empty.'.
+2026-08-10 16:18:37 [main] INFO  com.parabank.listeners.TestListener - Test PASSED: pbAuto05_verifyPaymentAmountMandatoryValidation
+2026-08-10 16:18:38 [main] INFO  com.parabank.listeners.TestListener - ===== Suite finished: parabank-automation | Passed: 5 | Failed: 0 | Skipped: 0 =====
