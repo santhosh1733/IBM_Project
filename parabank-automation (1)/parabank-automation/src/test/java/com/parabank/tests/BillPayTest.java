@@ -9,7 +9,6 @@ import com.parabank.utils.ConfigReader;
 import com.parabank.utils.ExcelUtils;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.util.HashMap;
@@ -24,19 +23,14 @@ import java.util.Map;
  * mismatch validation, balance integration, transaction-history integration,
  * and amount-required validation.
  *
- * Personal credentials are intentionally not committed to source. The public
- * ParaBank seeded demo credentials john/demo are only a fallback. Each team
- * member can use a different registered user at run time without changing
- * shared config.properties or committing credentials:
+ * The application URL is read by BaseTest from config.properties.
+ * Login credentials are read from config.properties so test classes do not
+ * contain hard-coded usernames/passwords. Maven -D properties can still
+ * override the config values for CI or another registered ParaBank user:
  *
  * mvn test -Dtest=BillPayTest -Dparabank.username=<user> -Dparabank.password=<pass>
  */
 public class BillPayTest extends BaseTest {
-
-    private static final String DEFAULT_BILLPAY_URL =
-            "https://parabank.parasoft.com/parabankv2/index.htm";
-    private static final String DEFAULT_USERNAME = "gurukr2527";
-    private static final String DEFAULT_PASSWORD = "Test123";
 
     private final Map<String, Map<String, String>> testDataById = new HashMap<>();
 
@@ -51,18 +45,6 @@ public class BillPayTest extends BaseTest {
                 testDataById.put(testCaseId, row);
             }
         }
-    }
-
-    /**
-     * BaseTest first creates the driver. This module-level setup then points
-     * only BillPayTest at ParaBank 2.0 without changing the shared project URL
-     * used by other team members. Override with -Dparabank.billpay.url=...
-     * whenever the team decides to execute this module against another
-     * ParaBank environment.
-     */
-    @BeforeMethod(alwaysRun = true)
-    public void openBillPayEnvironment() {
-        driver.get(System.getProperty("parabank.billpay.url", DEFAULT_BILLPAY_URL));
     }
 
     @Test(groups = {"smoke", "e2e"},
@@ -242,15 +224,18 @@ public class BillPayTest extends BaseTest {
     }
 
     private BillPayAccountOverviewPage loginAndGetOverview() {
-        String username = System.getProperty("parabank.username", DEFAULT_USERNAME);
-        String password = System.getProperty("parabank.password", DEFAULT_PASSWORD);
+        String username = System.getProperty(
+                "parabank.username", ConfigReader.get("parabank.username"));
+        String password = System.getProperty(
+                "parabank.password", ConfigReader.get("parabank.password"));
 
         new LoginPage(driver).login(username, password);
         BillPayAccountOverviewPage overview = new BillPayAccountOverviewPage(driver).waitUntilLoaded();
 
         Assert.assertTrue(overview.isAccountsTableDisplayed(),
                 "Login did not reach the Accounts Overview page. "
-                        + "If john/demo is unavailable, run with -Dparabank.username and -Dparabank.password.");
+                        + "Check parabank.username/parabank.password in config.properties "
+                        + "or override them with Maven -D properties.");
         return overview;
     }
 

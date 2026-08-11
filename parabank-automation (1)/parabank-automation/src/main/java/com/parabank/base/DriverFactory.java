@@ -10,6 +10,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
 import java.time.Duration;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Creates and manages WebDriver instances.
@@ -53,6 +55,20 @@ public class DriverFactory {
                 if (headless) options.addArguments("--headless=new");
                 options.addArguments("--start-maximized");
                 options.addArguments("--disable-notifications");
+
+                // Chrome's "Change your password" / compromised-password warning is
+                // browser UI, not a web-page alert, so Selenium cannot reliably
+                // handle it with driver.switchTo().alert(). Prevent it at browser
+                // startup by disabling password-manager and leak-detection features.
+                Map<String, Object> chromePrefs = new HashMap<>();
+                chromePrefs.put("credentials_enable_service",
+                        ConfigReader.getBoolean("chrome.credentials.service.enabled"));
+                chromePrefs.put("profile.password_manager_enabled",
+                        ConfigReader.getBoolean("chrome.password.manager.enabled"));
+                chromePrefs.put("profile.password_manager_leak_detection",
+                        ConfigReader.getBoolean("chrome.password.leak.detection.enabled"));
+                options.setExperimentalOption("prefs", chromePrefs);
+
                 webDriver = new ChromeDriver(options);
                 break;
         }
