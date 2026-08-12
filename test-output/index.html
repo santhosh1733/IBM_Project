@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\AYEESIDATTA SENAPATI\AppData\Local\Temp\testng-eclipse-1268826735\testng-customsuite.xml</span>
+                    <span>C:\Users\santhosh\AppData\Local\Temp\testng-eclipse--262845995\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -60,7 +60,7 @@
                 </li>
                 <li>
                   <a href="#" panel-name="group-Default_suite" class="navigator-link ">
-                    <span>0 groups</span>
+                    <span>1 group</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -103,7 +103,7 @@
                     <div class="method-list-content failed suite-Default_suite">
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.parabank.tests.FindTransactionsTest" class="method navigator-link" hash-for-method="verifyFindTransactionsPageOpensSuccessfully">verifyFindTransactionsPageOpensSuccessfully</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="com.parabank.tests.RequestLoanTest" class="method navigator-link" hash-for-method="smoke01_requestLoanMenuAccessible">smoke01_requestLoanMenuAccessible</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Default_suite -->
@@ -121,21 +121,23 @@
           <div class="suite-Default_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
-              <span class="class-name">com.parabank.tests.FindTransactionsTest</span>
+              <span class="class-name">com.parabank.tests.RequestLoanTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="verifyFindTransactionsPageOpensSuccessfully">
-                  </a> <!-- verifyFindTransactionsPageOpensSuccessfully -->
-                  <span class="method-name">verifyFindTransactionsPageOpensSuccessfully</span>
-                  <div class="stack-trace">java.lang.AssertionError: Accounts Overview page is not displayed expected [true] but found [false]
+                  <a name="smoke01_requestLoanMenuAccessible">
+                  </a> <!-- smoke01_requestLoanMenuAccessible -->
+                  <span class="method-name">smoke01_requestLoanMenuAccessible</span>
+                  <div class="stack-trace">java.lang.AssertionError: Expected Accounts Overview to load after login expected [true] but found [false]
 	at org.testng.Assert.fail(Assert.java:111)
 	at org.testng.Assert.failNotEquals(Assert.java:1578)
 	at org.testng.Assert.assertTrue(Assert.java:57)
-	at com.parabank.tests.FindTransactionsTest.verifyFindTransactionsPageOpensSuccessfully(FindTransactionsTest.java:27)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at com.parabank.tests.RequestLoanTest.smoke01_requestLoanMenuAccessible(RequestLoanTest.java:30)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
 	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
 	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
@@ -144,7 +146,7 @@
 	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
 	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
 	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at org.testng.TestRunner.privateRun(TestRunner.java:739)
 	at org.testng.TestRunner.run(TestRunner.java:614)
 	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
@@ -162,6 +164,8 @@
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 
 </div> <!-- stack-trace -->
+                  <em>
+(SMOKE_01: Verify Request Loan menu is accessible after login)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -169,7 +173,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\AYEESIDATTA SENAPATI\AppData\Local\Temp\testng-eclipse-1268826735\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\santhosh\AppData\Local\Temp\testng-eclipse--262845995\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -178,11 +182,11 @@
 &lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.parabank.tests.FindTransactionsTest&quot;&gt;
+      &lt;class name=&quot;com.parabank.tests.RequestLoanTest&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;verifyFindTransactionsPageOpensSuccessfully&quot;/&gt;
+          &lt;include name=&quot;smoke01_requestLoanMenuAccessible&quot;/&gt;
         &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- com.parabank.tests.FindTransactionsTest --&gt;
+      &lt;/class&gt; &lt;!-- com.parabank.tests.RequestLoanTest --&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -206,6 +210,14 @@
             <span class="header-content">Groups for Default suite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="test-group">
+              <span class="test-group-name">smoke</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">smoke01_requestLoanMenuAccessible</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="times-Default_suite" class="panel">
@@ -224,14 +236,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'verifyFindTransactionsPageOpensSuccessfully')
-data.setCell(0, 2, 'com.parabank.tests.FindTransactionsTest')
-data.setCell(0, 3, 12014);
+data.setCell(0, 1, 'smoke01_requestLoanMenuAccessible')
+data.setCell(0, 2, 'com.parabank.tests.RequestLoanTest')
+data.setCell(0, 3, 1272);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 12 seconds</span>
+              <span class="suite-total-time">Total running time: 1 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -246,23 +258,49 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">6 ignored methods</span>
+            <span class="header-content">19 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
-              <span class="ignored-class-name">com.parabank.tests.FindTransactionsTest</span>
+              <span class="ignored-class-name">com.parabank.tests.RequestLoanTest</span>
               <div class="ignored-methods-div">
-                <span class="ignored-method-name">verifyTransactionIdSearchReturnsResults</span>
+                <span class="ignored-method-name">smoke03_loanApplicationSubmitsCleanly</span>
                 <br/>
-                <span class="ignored-method-name">verifySearchByTransactionId</span>
+                <span class="ignored-method-name">int05_deniedLoanDoesNotAffectBalance</span>
                 <br/>
-                <span class="ignored-method-name">verifyAmountSearchReturnsResults</span>
+                <span class="ignored-method-name">func04_emptyDownPaymentValidation</span>
                 <br/>
-                <span class="ignored-method-name">verifySearchByAmount</span>
+                <span class="ignored-method-name">func01_loanApprovedWithSufficientDownPayment</span>
                 <br/>
-                <span class="ignored-method-name">verifyInvalidTransactionIdSearch</span>
+                <span class="ignored-method-name">int03_downPaymentTransactionSearchable</span>
                 <br/>
-                <span class="ignored-method-name">verifyFindTransactionSearchFlow</span>
+                <span class="ignored-method-name">func02_loanDeniedWithInsufficientDownPayment</span>
+                <br/>
+                <span class="ignored-method-name">func06_nonNumericInputRejected</span>
+                <br/>
+                <span class="ignored-method-name">func07_confirmationScreenDetails</span>
+                <br/>
+                <span class="ignored-method-name">int01_approvedLoanAppearsInOverview</span>
+                <br/>
+                <span class="ignored-method-name">e2e01_loanToTransferJourney</span>
+                <br/>
+                <span class="ignored-method-name">e2e02_retryAfterDenialJourney</span>
+                <br/>
+                <span class="ignored-method-name">smoke02_requestLoanPageFieldsPresent</span>
+                <br/>
+                <span class="ignored-method-name">smoke05_logoutAfterLoanRequest</span>
+                <br/>
+                <span class="ignored-method-name">func03_emptyLoanAmountValidation</span>
+                <br/>
+                <span class="ignored-method-name">e2e03_loanThenProfileUpdateJourney</span>
+                <br/>
+                <span class="ignored-method-name">int04_loanAccountSelectableInTransferFunds</span>
+                <br/>
+                <span class="ignored-method-name">func05_negativeValuesRejected</span>
+                <br/>
+                <span class="ignored-method-name">int02_downPaymentDebitedFromSource</span>
+                <br/>
+                <span class="ignored-method-name">smoke04_loanDenialPathCompletes</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -274,7 +312,7 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.parabank.tests.FindTransactionsTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.parabank.tests.RequestLoanTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
                 <span class="method-start">0 ms</span>
@@ -282,12 +320,12 @@ return data;
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">verifyFindTransactionsPageOpensSuccessfully</span>
-                <span class="method-start">3587 ms</span>
+                <span class="method-name">smoke01_requestLoanMenuAccessible</span>
+                <span class="method-start">2897 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">tearDown([TestResult name=verifyFindTransactionsPageOpensSuccessfully status=FAILURE method=FindTransactionsT...)</span>
-                <span class="method-start">15879 ms</span>
+                <span class="method-name">tearDown([TestResult name=smoke01_requestLoanMenuAccessible status=FAILURE method=RequestLoanTest.smoke01_req...)</span>
+                <span class="method-start">4242 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

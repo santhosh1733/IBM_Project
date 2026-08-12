@@ -27,6 +27,8 @@ public class ExcelUtils {
      * Reads a sheet into a List of Maps: each Map is one row, keyed by column header.
      * This is the format most convenient for feeding a TestNG @DataProvider.
      */
+	
+	//public static String filePath="C:\\Users\\santhosh\\git\\IBM_Project-2\\src\\test\\resources\\testdata\\TestData.xlsx";
     public static List<Map<String, String>> getSheetData(String filePath, String sheetName) {
         List<Map<String, String>> data = new ArrayList<>();
 
@@ -72,6 +74,46 @@ public class ExcelUtils {
             result[i][0] = rows.get(i);
         }
         return result;
+    }
+
+    /**
+     * Fetches a single row by its "TestCaseId" column value. This is the
+     * main entry point individual @Test methods should use -- one row per
+     * test case, looked up by the same ID that appears in the test's
+     * description, so the mapping between code and data is easy to trace.
+     *
+     * Example: ExcelUtils.getRowByTestCaseId(path, "RequestLoan", "SMOKE_03")
+     */
+    public static Map<String, String> getRowByTestCaseId(String filePath, String sheetName, String testCaseId) {
+        List<Map<String, String>> rows = getSheetData(filePath, sheetName);
+        for (Map<String, String> row : rows) {
+            if (testCaseId.equalsIgnoreCase(row.get("TestCaseId"))) {
+                return row;
+            }
+        }
+        throw new RuntimeException("No row found with TestCaseId='" + testCaseId
+                + "' in sheet '" + sheetName + "' of " + filePath);
+    }
+
+    /**
+     * Small in-memory cache keyed by "filePath|sheetName" so repeatedly
+     * reading the same rarely-changing sheet (e.g. Credentials, read once
+     * per test method via BaseTest) doesn't re-open the workbook every time.
+     * Cache is intentionally simple/unbounded -- the workbooks this
+     * framework reads are tiny, and the cache only lives for one JVM run.
+     */
+    private static final Map<String, List<Map<String, String>>> sheetCache = new java.util.HashMap<>();
+
+    public static Map<String, String> getCachedRowByTestCaseId(String filePath, String sheetName, String testCaseId) {
+        String cacheKey = filePath + "|" + sheetName;
+        List<Map<String, String>> rows = sheetCache.computeIfAbsent(cacheKey, k -> getSheetData(filePath, sheetName));
+        for (Map<String, String> row : rows) {
+            if (testCaseId.equalsIgnoreCase(row.get("TestCaseId"))) {
+                return row;
+            }
+        }
+        throw new RuntimeException("No row found with TestCaseId='" + testCaseId
+                + "' in sheet '" + sheetName + "' of " + filePath);
     }
 
     /** Writes actual results back to a new column, useful for audit trail / reporting. */

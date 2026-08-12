@@ -4,6 +4,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 /**
  * Update Contact Info page object (Owner: M5).
  * STARTER SCAFFOLD -- verify field names/ids against the live DOM.
@@ -64,6 +67,68 @@ public class UpdateContactInfoPage extends BasePage {
         return firstNameInput.getAttribute("value");
     }
 
-    // TODO (M5): add a getAllFieldValues() helper (returns a Map<String,String>)
-    // for the "pre-fill matches existing data" test case.
+    public String getLastNameValue() {
+        return lastNameInput.getAttribute("value");
+    }
+
+    public String getStreetValue() {
+        return streetInput.getAttribute("value");
+    }
+
+    public String getCityValue() {
+        return cityInput.getAttribute("value");
+    }
+
+    public String getStateValue() {
+        return stateInput.getAttribute("value");
+    }
+
+    public String getZipValue() {
+        return zipInput.getAttribute("value");
+    }
+
+    public String getPhoneValue() {
+        return phoneInput.getAttribute("value");
+    }
+
+    /** Snapshot of every editable field, keyed by field name -- used for pre-fill and persistence checks. */
+    public Map<String, String> getAllFieldValues() {
+        Map<String, String> values = new LinkedHashMap<>();
+        values.put("firstName", getFirstNameValue());
+        values.put("lastName", getLastNameValue());
+        values.put("street", getStreetValue());
+        values.put("city", getCityValue());
+        values.put("state", getStateValue());
+        values.put("zip", getZipValue());
+        values.put("phone", getPhoneValue());
+        return values;
+    }
+
+    // Individual field clearers -- used by the mandatory-field validation
+    // tests, so each one can leave exactly one field empty while keeping
+    // the rest valid.
+    public UpdateContactInfoPage clearStreet() {
+        streetInput.clear();
+        return this;
+    }
+
+    public UpdateContactInfoPage clearCity() {
+        cityInput.clear();
+        return this;
+    }
+
+    public UpdateContactInfoPage clearState() {
+        stateInput.clear();
+        return this;
+    }
+
+    public UpdateContactInfoPage clearZip() {
+        zipInput.clear();
+        return this;
+    }
+
+    public UpdateContactInfoPage clearPhone() {
+        phoneInput.clear();
+        return this;
+    }
 }

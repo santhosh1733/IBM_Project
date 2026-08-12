@@ -16,8 +16,8 @@ import java.util.Map;
 
 
 public class RequestLoanTest extends BaseTest {
-	 private static final String  USERNAME = ConfigReader.get("username");
-	    private static final String PASSWORD = ConfigReader.get("password");
+	// private static final String  USERNAME = ConfigReader.get("username");
+	 //   private static final String PASSWORD = ConfigReader.get("password");
 
 	    // =========================================================================
 	    // SMOKE (5) -- fast, critical-path only. Should always run in under a
