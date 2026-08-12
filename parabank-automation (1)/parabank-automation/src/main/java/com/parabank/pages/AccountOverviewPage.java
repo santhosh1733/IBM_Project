@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import com.parabank.utils.WaitUtils;
+
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -95,4 +97,35 @@ public class AccountOverviewPage extends BasePage {
         click(logoutLink);
         return new LoginPage(driver);
     }
+
+	public void viewAccountDetails(String fromAccount) {
+		    String xpath = "//a[normalize-space(text())='" + fromAccount + "']";
+
+		    WebElement accountLink = driver.findElement(By.xpath(xpath));
+
+		    WaitUtils.waitForClickable(driver, By.xpath(xpath));
+		    accountLink.click();
+		
+	}
+
+	public boolean isTransactionInHistory(String transferAmountStr) {
+	    By transactionRows = By.cssSelector("#transactionTable tbody tr");
+
+	    try {
+	        List<WebElement> rows = driver.findElements(transactionRows);
+
+	        for (WebElement row : rows) {
+	            String rowText = row.getText().trim();
+
+	            if (rowText.contains(transferAmountStr)) {
+	                return true;
+	            }
+	        }
+
+	    } catch (Exception e) {
+	        return false;
+	    }
+
+	    return false;
+	}
 }

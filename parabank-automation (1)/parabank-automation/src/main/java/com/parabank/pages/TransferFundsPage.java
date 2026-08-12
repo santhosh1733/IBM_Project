@@ -1,5 +1,6 @@
 package com.parabank.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -31,6 +32,9 @@ public class TransferFundsPage extends BasePage {
 
     @FindBy(id = "amountResult")
     private WebElement confirmedAmount;
+
+    @FindBy(linkText = "Accounts Overview")
+    private WebElement accountsOverviewLink;
 
     public TransferFundsPage(WebDriver driver) {
         super(driver);
@@ -72,6 +76,29 @@ public class TransferFundsPage extends BasePage {
         return getText(confirmedAmount);
     }
 
+    /**
+     * Navigate back to the Accounts Overview page after completing a transfer.
+     * This helps tests that need to re-read account balances.
+     */
+    public AccountOverviewPage goToAccountsOverview() {
+        click(accountsOverviewLink);
+        // Wait until the accounts table is visible on the Overview page.
+        com.parabank.utils.WaitUtils.waitForVisible(driver, org.openqa.selenium.By.cssSelector("#accountTable"));
+        return new AccountOverviewPage(driver);
+    }
+
+    public void rapidClickTransferButton(int numberOfClicks) {
+        WebElement transferButton = driver.findElement(By.cssSelector("input[value='Transfer']"));
+
+        for (int i = 0; i < numberOfClicks; i++) {
+            try {
+                transferButton.click();
+            } catch (Exception e) {
+                // Button may disappear after the first successful submission
+                break;
+            }
+        }
+    }
     // TODO (M3): add methods for negative-amount / insufficient-balance error checks
     // once you've inspected how ParaBank renders that validation message.
 }
