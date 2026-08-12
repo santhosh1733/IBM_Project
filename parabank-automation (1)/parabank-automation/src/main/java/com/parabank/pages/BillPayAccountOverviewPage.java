@@ -43,6 +43,17 @@ public class BillPayAccountOverviewPage extends AccountOverviewPage {
         return getBalanceForAccount(accountId);
     }
 
+
+    public BillPayFindTransactionsPage goToBillPayFindTransactions() {
+        super.goToFindTransactions();
+        return new BillPayFindTransactionsPage(driver).waitUntilLoaded();
+    }
+
+    public BillPayOpenNewAccountPage goToBillPayOpenNewAccount() {
+        super.goToOpenNewAccount();
+        return new BillPayOpenNewAccountPage(driver);
+    }
+
     public AccountDetailsPage openAccount(String accountId) {
         WebElement accountLink = WaitUtils.waitForClickable(driver,
                 By.xpath("//a[normalize-space()='" + accountId + "']"));

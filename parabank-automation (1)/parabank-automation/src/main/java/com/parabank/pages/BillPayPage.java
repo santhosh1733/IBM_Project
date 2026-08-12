@@ -135,6 +135,31 @@ public class BillPayPage extends BasePage {
         return this;
     }
 
+    public BillPayPage waitUntilLoaded() {
+        WaitUtils.waitForVisible(driver, payeeNameInput);
+        WaitUtils.waitForVisible(driver, fromAccountDropdown);
+        WaitUtils.waitForClickable(driver, sendPaymentButton);
+        return this;
+    }
+
+    public boolean isCriticalBillPayFormDisplayed() {
+        return isDisplayed(payeeNameInput)
+                && isDisplayed(payeeAccountInput)
+                && isDisplayed(verifyAccountInput)
+                && isDisplayed(amountInput)
+                && isDisplayed(fromAccountDropdown)
+                && isDisplayed(sendPaymentButton);
+    }
+
+    public List<String> getFromAccountOptions() {
+        waitUntilLoaded();
+        Select select = new Select(fromAccountDropdown);
+        return select.getOptions().stream()
+                .map(option -> option.getText().trim())
+                .filter(text -> !text.isBlank())
+                .toList();
+    }
+
     public BillPayPage submitPayment() {
         click(sendPaymentButton);
         return this;
