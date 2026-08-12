@@ -202,7 +202,7 @@ public class RequestLoanTest extends BaseTest {
 	    }
 
 	    @Test(groups = "integration", description = "INT_03 / TC_LOAN_I03: Verify loan down payment transaction appears in Find Transactions")
-	    public void int03_downPaymentTransactionSearchable() {
+	    public void int03_downPaymentTransactionSearchable() throws InterruptedException {
 	        AccountOverviewPage overview = new LoginPage(driver).login(USERNAME, PASSWORD);
 	        String fromAccount = overview.getAllAccountIds().get(0);
 
@@ -300,7 +300,7 @@ public class RequestLoanTest extends BaseTest {
 	    }
 
 	    @Test(groups = "e2e", description = "E2E_03: Login -> apply for loan -> verify transaction -> update contact info -> logout")
-	    public void e2e03_loanThenProfileUpdateJourney() {
+	    public void e2e03_loanThenProfileUpdateJourney() throws InterruptedException {
 	        AccountOverviewPage overview = new LoginPage(driver).login(USERNAME, PASSWORD);
 	        String fromAccount = overview.getAllAccountIds().get(0);
 

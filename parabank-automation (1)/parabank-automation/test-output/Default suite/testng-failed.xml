@@ -5,8 +5,8 @@
     <classes>
       <class name="com.parabank.tests.FindTransactionsTest">
         <methods>
+          <include name="verifySearchByDate"/>
           <include name="setUp"/>
-          <include name="verifyFindTransactionsPageOpensSuccessfully"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- com.parabank.tests.FindTransactionsTest -->

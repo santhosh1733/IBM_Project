@@ -19,3 +19,4 @@ public class LoginTest extends BaseTest {
         Assert.assertTrue(overview.isAccountsTableDisplayed(),
                 "Expected Accounts Overview table to be displayed after login");
 }
+}

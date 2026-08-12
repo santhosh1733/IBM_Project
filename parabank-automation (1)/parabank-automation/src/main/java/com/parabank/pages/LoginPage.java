@@ -25,13 +25,28 @@ public class LoginPage extends BasePage {
     public LoginPage(WebDriver driver) {
         super(driver);
     }
-
+    
     public AccountOverviewPage login(String username, String password) {
+
         type(usernameInput, username);
         type(passwordInput, password);
         click(loginButton);
+
+        System.out.println("Current URL after login: " + driver.getCurrentUrl());
+        System.out.println("Page title after login: " + driver.getTitle());
+
+        if (isErrorDisplayed()) {
+            System.out.println("LOGIN ERROR: " + getErrorText());
+        }
+
         return new AccountOverviewPage(driver);
     }
+
+	/*
+	 * public AccountOverviewPage login(String username, String password) {
+	 * type(usernameInput, username); type(passwordInput, password);
+	 * click(loginButton); return new AccountOverviewPage(driver); }
+	 */
 
     public boolean isErrorDisplayed() {
         return isDisplayed(errorMessage);

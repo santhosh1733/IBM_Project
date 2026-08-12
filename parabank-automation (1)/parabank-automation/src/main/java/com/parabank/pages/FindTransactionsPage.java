@@ -1,61 +1,164 @@
 package com.parabank.pages;
 
+import java.time.Duration;
+import java.util.List;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.List;
-
-/**
- * Find Transactions page object (Owner: M3).
- * STARTER SCAFFOLD -- ParaBank exposes several search modes (by ID, by date,
- * by date range, by amount) as separate collapsible panels/tabs. Verify each
- * panel's field IDs individually; they differ per search type.
- */
 public class FindTransactionsPage extends BasePage {
 
-    @FindBy(id = "transactionId")
-    private WebElement transactionIdInput;
+	private WebDriverWait wait;
 
-    @FindBy(id = "findById")
-    private WebElement findByIdButton;
+	// Transaction ID search
+	@FindBy(id = "transactionId")
+	private WebElement transactionIdInput;
 
-    @FindBy(id = "amount")
-    private WebElement amountInput;
+	@FindBy(id = "findById")
+	private WebElement findByIdButton;
 
-    @FindBy(id = "findByAmount")
-    private WebElement findByAmountButton;
+	// Amount search
+	@FindBy(id = "amount")
+	private WebElement amountInput;
 
-    @FindBy(css = "#transactionsTable tbody tr")
-    private List<WebElement> resultRows;
+	@FindBy(id = "findByAmount")
+	private WebElement findByAmountButton;
 
-    @FindBy(css = "#transactionsTable")
-    private WebElement resultsTable;
+	// Date search
+	@FindBy(id = "transactionDate")
+	private WebElement dateField;
 
-    public FindTransactionsPage(WebDriver driver) {
-        super(driver);
-    }
+	@FindBy(id = "findByDate")
+	private WebElement findByDateButton;
 
-    public FindTransactionsPage searchByTransactionId(String transactionId) {
-        type(transactionIdInput, transactionId);
-        click(findByIdButton);
-        return this;
-    }
+	// Search result
+	@FindBy(id = "transactionTable")
+	private WebElement resultsTable;
 
-    public FindTransactionsPage searchByAmount(String amount) {
-        type(amountInput, amount);
-        click(findByAmountButton);
-        return this;
-    }
+	@FindBy(css = "#transactionBody tr")
+	private List<WebElement> resultRows;
 
-    public int getResultCount() {
-        return resultRows.size();
-    }
+	// Date Range search
+	@FindBy(id = "fromDate")
+	private WebElement fromDateField;
 
-    public boolean hasResults() {
-        return isDisplayed(resultsTable) && !resultRows.isEmpty();
-    }
+	@FindBy(id = "toDate")
+	private WebElement toDateField;
 
-    // TODO (M3): add searchByDate() and searchByDateRange() once you've inspected
-    // ParaBank's date-picker panel IDs, and a getNoResultsMessage() for the empty state.
+	@FindBy(id = "findByDateRange")
+	private WebElement findByDateRangeButton;
+
+	public FindTransactionsPage(WebDriver driver) {
+		super(driver);
+		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	}
+
+	public FindTransactionsPage searchByTransactionId(String transactionId) {
+
+		wait.until(ExpectedConditions.visibilityOf(transactionIdInput));
+		transactionIdInput.clear();
+		transactionIdInput.sendKeys(transactionId);
+		System.out.println("Entered Transaction ID: " + transactionIdInput.getAttribute("value"));
+		wait.until(ExpectedConditions.elementToBeClickable(findByIdButton));
+		findByIdButton.click();
+
+		// Wait for the Find Transactions page to load
+		wait.until(ExpectedConditions.urlContains("findtrans.htm"));
+		System.out.println("URL after search: " + driver.getCurrentUrl());
+
+		// Print the complete visible page text for debugging
+		String pageText = driver.findElement(org.openqa.selenium.By.tagName("body")).getText();
+		System.out.println("========== PAGE TEXT AFTER SEARCH ==========");
+		System.out.println(pageText);
+		System.out.println("============================================");
+
+		return this;
+	}
+
+	// Search by Amount
+	public FindTransactionsPage searchByAmount(String amount) throws InterruptedException {
+
+		wait.until(ExpectedConditions.visibilityOf(amountInput));
+		amountInput.clear();
+		amountInput.sendKeys(amount);
+		System.out.println("Entered Amount: " + amountInput.getAttribute("value"));
+		System.out.println("Amount button displayed: " + findByAmountButton.isDisplayed());
+		System.out.println("Amount button enabled: " + findByAmountButton.isEnabled());
+		System.out.println("Amount button type: " + findByAmountButton.getAttribute("type"));
+		System.out.println("Amount button value: " + findByAmountButton.getAttribute("value"));
+		System.out.println("Amount input name: " + amountInput.getAttribute("name"));
+		System.out.println("Amount input id: " + amountInput.getAttribute("id"));
+		wait.until(ExpectedConditions.elementToBeClickable(findByAmountButton));
+		findByAmountButton.click();
+		Thread.sleep(1000);
+		System.out.println("URL after amount search: " + driver.getCurrentUrl());
+		String pageText = driver.findElement(org.openqa.selenium.By.tagName("body")).getText();
+		System.out.println("========== PAGE TEXT AFTER AMOUNT SEARCH ==========");
+		System.out.println(pageText);
+		System.out.println("==================================================");
+		return this;
+	}
+
+	// Search by Date
+	public FindTransactionsPage searchByDate(String date) {
+
+		wait.until(ExpectedConditions.visibilityOf(dateField));
+		dateField.clear();
+		dateField.sendKeys(date);
+		// Click Find Transactions
+		wait.until(ExpectedConditions.elementToBeClickable(findByDateButton));
+		findByDateButton.click();
+		return this;
+	}
+
+	// Search by Date Range
+	public FindTransactionsPage searchByDateRange(String fromDate, String toDate) {
+
+		wait.until(ExpectedConditions.visibilityOf(fromDateField));
+		fromDateField.clear();
+		fromDateField.sendKeys(fromDate);
+		wait.until(ExpectedConditions.visibilityOf(toDateField));
+		toDateField.clear();
+		toDateField.sendKeys(toDate);
+		// Click Find Transactions
+		wait.until(ExpectedConditions.elementToBeClickable(findByDateRangeButton));
+		findByDateRangeButton.click();
+		return this;
+	}
+
+	// Check whether results are displayed
+	public boolean hasResults() {
+
+		System.out.println("Results table displayed: " + isDisplayed(resultsTable));
+		System.out.println("Number of result rows: " + resultRows.size());
+		return isDisplayed(resultsTable) && !resultRows.isEmpty();
+	}
+
+	// Get number of results
+	public int getResultCount() {
+		try {
+			wait.until(ExpectedConditions.visibilityOf(resultsTable));
+			return resultRows.size();
+		} catch (Exception e) {
+			return 0;
+		}
+	}
+
+	// Verify actual Transaction ID is present
+	public boolean isTransactionIdDisplayed(String transactionId) {
+		try {
+			wait.until(ExpectedConditions.visibilityOf(resultsTable));
+			for (WebElement row : resultRows) {
+				if (row.getText().contains(transactionId)) {
+					return true;
+				}
+			}
+			return false;
+		} catch (Exception e) {
+			return false;
+		}
+	}
 }
