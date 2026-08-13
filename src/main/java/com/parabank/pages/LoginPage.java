@@ -40,4 +40,7 @@ public class LoginPage extends BasePage {
     public String getErrorText() {
         return getText(errorMessage);
     }
+    public boolean isLoginPageDisplayed() {
+        return isDisplayed(usernameInput);
+    }
 }
