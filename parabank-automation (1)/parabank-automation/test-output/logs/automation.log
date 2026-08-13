@@ -2269,3 +2269,417 @@ java.lang.Error: Unresolved compilation problems:
 2026-08-12 16:21:33 [main] INFO  com.parabank.listeners.TestListener - ===== Suite started: Default test =====
 2026-08-12 16:21:37 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabankv2/index.htm
 2026-08-12 16:21:37 [main] INFO  com.parabank.listeners.TestListener - Test started: verifyFindTransactionsPageOpensSuccessfully
+2026-08-12 17:55:25 [main] INFO  com.parabank.listeners.TestListener - ===== Suite started: Default test =====
+2026-08-12 17:55:30 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabankv2/index.htm
+2026-08-12 17:55:31 [main] INFO  com.parabank.listeners.TestListener - Test started: verifySearchWithSameFromAndToDate
+2026-08-12 17:55:35 [main] INFO  com.parabank.listeners.TestListener - Test PASSED: verifySearchWithSameFromAndToDate
+2026-08-12 17:55:35 [main] INFO  com.parabank.listeners.TestListener - ===== Suite finished: Default test | Passed: 1 | Failed: 0 | Skipped: 0 =====
+2026-08-12 17:57:53 [main] INFO  com.parabank.listeners.TestListener - ===== Suite started: Default test =====
+2026-08-12 17:57:57 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabankv2/index.htm
+2026-08-12 17:57:57 [main] INFO  com.parabank.listeners.TestListener - Test started: verifyMultipleTransactionsForSameAmount
+2026-08-12 17:58:01 [main] INFO  com.parabank.listeners.TestListener - Test PASSED: verifyMultipleTransactionsForSameAmount
+2026-08-12 17:58:02 [main] INFO  com.parabank.listeners.TestListener - ===== Suite finished: Default test | Passed: 1 | Failed: 0 | Skipped: 0 =====
+2026-08-12 17:59:37 [main] INFO  com.parabank.listeners.TestListener - ===== Suite started: Default test =====
+2026-08-12 17:59:40 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabankv2/index.htm
+2026-08-12 17:59:40 [main] INFO  com.parabank.listeners.TestListener - Test started: verifySearchUsingSpecialCharactersInTransactionId
+2026-08-12 17:59:53 [main] INFO  com.parabank.listeners.TestListener - Test PASSED: verifySearchUsingSpecialCharactersInTransactionId
+2026-08-12 17:59:53 [main] INFO  com.parabank.listeners.TestListener - ===== Suite finished: Default test | Passed: 1 | Failed: 0 | Skipped: 0 =====
+2026-08-12 18:01:07 [main] INFO  com.parabank.listeners.TestListener - ===== Suite started: Default test =====
+2026-08-12 18:01:10 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabankv2/index.htm
+2026-08-12 18:01:10 [main] INFO  com.parabank.listeners.TestListener - Test started: verifySearchUsingFutureDate
+2026-08-12 18:01:23 [main] INFO  com.parabank.listeners.TestListener - Test PASSED: verifySearchUsingFutureDate
+2026-08-12 18:01:24 [main] INFO  com.parabank.listeners.TestListener - ===== Suite finished: Default test | Passed: 1 | Failed: 0 | Skipped: 0 =====
+2026-08-12 18:02:00 [main] INFO  com.parabank.listeners.TestListener - ===== Suite started: Default test =====
+2026-08-12 18:02:03 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabankv2/index.htm
+2026-08-12 18:02:03 [main] INFO  com.parabank.listeners.TestListener - Test started: verifyNewSearchUpdatesPreviousResults
+2026-08-12 18:02:16 [main] ERROR com.parabank.listeners.TestListener - Test FAILED: verifyNewSearchUpdatesPreviousResults
+org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of [[ChromeDriver: chrome on windows (3db86df53c9306e4b655ef949fb54db6)] -> id: transactionDate] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.23.0', revision: '4df0a231af'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 151.0.7922.137, chrome: {chromedriverVersion: 151.0.7922.138 (41fa8244239..., userDataDir: C:\Users\AYEESI~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60634}, goog:processID: 20268, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60634/devtoo..., se:cdpVersion: 151.0.7922.137, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3db86df53c9306e4b655ef949fb54db6
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84) ~[selenium-support-4.23.0.jar:?]
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228) ~[selenium-support-4.23.0.jar:?]
+	at com.parabank.pages.FindTransactionsPage.searchByDate(FindTransactionsPage.java:108) ~[classes/:?]
+	at com.parabank.tests.FindTransactionsTest.verifyNewSearchUpdatesPreviousResults(FindTransactionsTest.java:359) ~[test-classes/:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134) ~[testng-7.10.2.jar:7.10.2]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596) [?:?]
+	at org.testng.TestRunner.privateRun(TestRunner.java:739) [testng-7.10.2.jar:7.10.2]
+	at org.testng.TestRunner.run(TestRunner.java:614) [testng-7.10.2.jar:7.10.2]
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421) [testng-7.10.2.jar:7.10.2]
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413) [testng-7.10.2.jar:7.10.2]
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373) [testng-7.10.2.jar:7.10.2]
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312) [testng-7.10.2.jar:7.10.2]
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52) [testng-7.10.2.jar:7.10.2]
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95) [testng-7.10.2.jar:7.10.2]
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274) [testng-7.10.2.jar:7.10.2]
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208) [testng-7.10.2.jar:7.10.2]
+	at org.testng.TestNG.runSuites(TestNG.java:1112) [testng-7.10.2.jar:7.10.2]
+	at org.testng.TestNG.run(TestNG.java:1079) [testng-7.10.2.jar:7.10.2]
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115) [testng-remote.jar:?]
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293) [testng-remote.jar:?]
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91) [testng-remote.jar:?]
+2026-08-12 18:02:16 [main] INFO  com.parabank.tests.BaseTest - Screenshot saved: test-output/screenshots/verifyNewSearchUpdatesPreviousResults_1786537936885.png
+2026-08-12 18:02:16 [main] ERROR com.parabank.tests.BaseTest - Test FAILED: verifyNewSearchUpdatesPreviousResults
+2026-08-12 18:02:17 [main] INFO  com.parabank.listeners.TestListener - ===== Suite finished: Default test | Passed: 0 | Failed: 1 | Skipped: 0 =====
+2026-08-12 18:03:55 [main] INFO  com.parabank.listeners.TestListener - ===== Suite started: Default test =====
+2026-08-12 18:03:59 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabankv2/index.htm
+2026-08-12 18:03:59 [main] INFO  com.parabank.listeners.TestListener - Test started: verifyNewSearchUpdatesPreviousResults
+2026-08-12 18:04:33 [main] INFO  com.parabank.listeners.TestListener - Test PASSED: verifyNewSearchUpdatesPreviousResults
+2026-08-12 18:04:34 [main] INFO  com.parabank.listeners.TestListener - ===== Suite finished: Default test | Passed: 1 | Failed: 0 | Skipped: 0 =====
+2026-08-12 21:12:53 [main] INFO  com.parabank.listeners.TestListener - ===== Suite started: Default test =====
+2026-08-12 21:12:58 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabankv2/index.htm
+2026-08-12 21:12:59 [main] INFO  com.parabank.listeners.TestListener - Test started: verifyNewSearchUpdatesPreviousResults
+2026-08-12 21:13:11 [main] ERROR com.parabank.listeners.TestListener - Test FAILED: verifyNewSearchUpdatesPreviousResults
+java.lang.AssertionError: Accounts Overview page is not displayed expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.Assert.failNotEquals(Assert.java:1578) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.Assert.assertTrue(Assert.java:57) ~[testng-7.10.2.jar:7.10.2]
+	at com.parabank.tests.FindTransactionsTest.verifyNewSearchUpdatesPreviousResults(FindTransactionsTest.java:334) ~[test-classes/:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134) ~[testng-7.10.2.jar:7.10.2]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596) [?:?]
+	at org.testng.TestRunner.privateRun(TestRunner.java:739) [testng-7.10.2.jar:7.10.2]
+	at org.testng.TestRunner.run(TestRunner.java:614) [testng-7.10.2.jar:7.10.2]
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421) [testng-7.10.2.jar:7.10.2]
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413) [testng-7.10.2.jar:7.10.2]
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373) [testng-7.10.2.jar:7.10.2]
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312) [testng-7.10.2.jar:7.10.2]
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52) [testng-7.10.2.jar:7.10.2]
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95) [testng-7.10.2.jar:7.10.2]
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274) [testng-7.10.2.jar:7.10.2]
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208) [testng-7.10.2.jar:7.10.2]
+	at org.testng.TestNG.runSuites(TestNG.java:1112) [testng-7.10.2.jar:7.10.2]
+	at org.testng.TestNG.run(TestNG.java:1079) [testng-7.10.2.jar:7.10.2]
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115) [testng-remote.jar:?]
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293) [testng-remote.jar:?]
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91) [testng-remote.jar:?]
+2026-08-12 21:13:12 [main] INFO  com.parabank.tests.BaseTest - Screenshot saved: test-output/screenshots/verifyNewSearchUpdatesPreviousResults_1786549392187.png
+2026-08-12 21:13:12 [main] ERROR com.parabank.tests.BaseTest - Test FAILED: verifyNewSearchUpdatesPreviousResults
+2026-08-12 21:13:13 [main] INFO  com.parabank.listeners.TestListener - ===== Suite finished: Default test | Passed: 0 | Failed: 1 | Skipped: 0 =====
+2026-08-12 21:13:31 [main] INFO  com.parabank.listeners.TestListener - ===== Suite started: Default test =====
+2026-08-12 21:13:35 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabankv2/index.htm
+2026-08-12 21:13:35 [main] INFO  com.parabank.listeners.TestListener - Test started: verifySearchUsingFutureDate
+2026-08-12 21:13:40 [main] ERROR com.parabank.listeners.TestListener - Could not capture screenshot for report: invalid session id
+Build info: version: '4.23.0', revision: '4df0a231af'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [3c2f14c71b66e7947d2b1e91fed78030, screenshot {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 151.0.7922.137, chrome: {chromedriverVersion: 151.0.7922.138 (41fa8244239..., userDataDir: C:\Users\AYEESI~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56211}, goog:processID: 22308, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56211/devtoo..., se:cdpVersion: 151.0.7922.137, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3c2f14c71b66e7947d2b1e91fed78030
+2026-08-12 21:13:40 [main] ERROR com.parabank.listeners.TestListener - Test FAILED: verifySearchUsingFutureDate
+java.lang.AssertionError: Accounts Overview page is not displayed expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.Assert.failNotEquals(Assert.java:1578) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.Assert.assertTrue(Assert.java:57) ~[testng-7.10.2.jar:7.10.2]
+	at com.parabank.tests.FindTransactionsTest.verifySearchUsingFutureDate(FindTransactionsTest.java:299) ~[test-classes/:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134) ~[testng-7.10.2.jar:7.10.2]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596) [?:?]
+	at org.testng.TestRunner.privateRun(TestRunner.java:739) [testng-7.10.2.jar:7.10.2]
+	at org.testng.TestRunner.run(TestRunner.java:614) [testng-7.10.2.jar:7.10.2]
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421) [testng-7.10.2.jar:7.10.2]
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413) [testng-7.10.2.jar:7.10.2]
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373) [testng-7.10.2.jar:7.10.2]
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312) [testng-7.10.2.jar:7.10.2]
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52) [testng-7.10.2.jar:7.10.2]
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95) [testng-7.10.2.jar:7.10.2]
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274) [testng-7.10.2.jar:7.10.2]
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208) [testng-7.10.2.jar:7.10.2]
+	at org.testng.TestNG.runSuites(TestNG.java:1112) [testng-7.10.2.jar:7.10.2]
+	at org.testng.TestNG.run(TestNG.java:1079) [testng-7.10.2.jar:7.10.2]
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115) [testng-remote.jar:?]
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293) [testng-remote.jar:?]
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91) [testng-remote.jar:?]
+2026-08-12 21:13:40 [main] ERROR com.parabank.tests.BaseTest - Failed to capture screenshot: invalid session id
+Build info: version: '4.23.0', revision: '4df0a231af'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [3c2f14c71b66e7947d2b1e91fed78030, screenshot {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 151.0.7922.137, chrome: {chromedriverVersion: 151.0.7922.138 (41fa8244239..., userDataDir: C:\Users\AYEESI~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56211}, goog:processID: 22308, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56211/devtoo..., se:cdpVersion: 151.0.7922.137, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3c2f14c71b66e7947d2b1e91fed78030
+2026-08-12 21:13:40 [main] ERROR com.parabank.tests.BaseTest - Test FAILED: verifySearchUsingFutureDate
+2026-08-12 21:13:40 [main] INFO  com.parabank.listeners.TestListener - ===== Suite finished: Default test | Passed: 0 | Failed: 1 | Skipped: 0 =====
+2026-08-12 21:14:32 [main] INFO  com.parabank.listeners.TestListener - ===== Suite started: Default test =====
+2026-08-12 21:14:36 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabankv2/index.htm
+2026-08-12 21:14:36 [main] INFO  com.parabank.listeners.TestListener - Test started: verifyFindTransactionsPageOpensSuccessfully
+2026-08-12 21:14:48 [main] ERROR com.parabank.listeners.TestListener - Test FAILED: verifyFindTransactionsPageOpensSuccessfully
+java.lang.AssertionError: Accounts Overview page is not displayed expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.Assert.failNotEquals(Assert.java:1578) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.Assert.assertTrue(Assert.java:57) ~[testng-7.10.2.jar:7.10.2]
+	at com.parabank.tests.FindTransactionsTest.verifyFindTransactionsPageOpensSuccessfully(FindTransactionsTest.java:42) ~[test-classes/:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134) ~[testng-7.10.2.jar:7.10.2]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596) [?:?]
+	at org.testng.TestRunner.privateRun(TestRunner.java:739) [testng-7.10.2.jar:7.10.2]
+	at org.testng.TestRunner.run(TestRunner.java:614) [testng-7.10.2.jar:7.10.2]
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421) [testng-7.10.2.jar:7.10.2]
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413) [testng-7.10.2.jar:7.10.2]
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373) [testng-7.10.2.jar:7.10.2]
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312) [testng-7.10.2.jar:7.10.2]
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52) [testng-7.10.2.jar:7.10.2]
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95) [testng-7.10.2.jar:7.10.2]
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274) [testng-7.10.2.jar:7.10.2]
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208) [testng-7.10.2.jar:7.10.2]
+	at org.testng.TestNG.runSuites(TestNG.java:1112) [testng-7.10.2.jar:7.10.2]
+	at org.testng.TestNG.run(TestNG.java:1079) [testng-7.10.2.jar:7.10.2]
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115) [testng-remote.jar:?]
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293) [testng-remote.jar:?]
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91) [testng-remote.jar:?]
+2026-08-12 21:14:48 [main] INFO  com.parabank.tests.BaseTest - Screenshot saved: test-output/screenshots/verifyFindTransactionsPageOpensSuccessfully_1786549488663.png
+2026-08-12 21:14:48 [main] ERROR com.parabank.tests.BaseTest - Test FAILED: verifyFindTransactionsPageOpensSuccessfully
+2026-08-12 21:14:49 [main] INFO  com.parabank.listeners.TestListener - ===== Suite finished: Default test | Passed: 0 | Failed: 1 | Skipped: 0 =====
+2026-08-12 21:18:45 [main] INFO  com.parabank.listeners.TestListener - ===== Suite started: Default test =====
+2026-08-12 21:18:48 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabankv2/index.htm
+2026-08-12 21:18:49 [main] INFO  com.parabank.listeners.TestListener - Test started: verifyFindTransactionsPageOpensSuccessfully
+2026-08-12 21:18:51 [main] INFO  com.parabank.listeners.TestListener - Test PASSED: verifyFindTransactionsPageOpensSuccessfully
+2026-08-12 21:18:52 [main] INFO  com.parabank.listeners.TestListener - ===== Suite finished: Default test | Passed: 1 | Failed: 0 | Skipped: 0 =====
+2026-08-12 21:18:56 [main] INFO  com.parabank.listeners.TestListener - ===== Suite started: Default test =====
+2026-08-12 21:18:59 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabankv2/index.htm
+2026-08-12 21:19:00 [main] INFO  com.parabank.listeners.TestListener - Test started: verifySearchByTransactionId
+2026-08-12 21:19:02 [main] INFO  com.parabank.listeners.TestListener - Test PASSED: verifySearchByTransactionId
+2026-08-12 21:19:02 [main] INFO  com.parabank.listeners.TestListener - ===== Suite finished: Default test | Passed: 1 | Failed: 0 | Skipped: 0 =====
+2026-08-12 21:19:09 [main] INFO  com.parabank.listeners.TestListener - ===== Suite started: Default test =====
+2026-08-12 21:19:12 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabankv2/index.htm
+2026-08-12 21:19:12 [main] INFO  com.parabank.listeners.TestListener - Test started: verifySearchByAmount
+2026-08-12 21:19:16 [main] INFO  com.parabank.listeners.TestListener - Test PASSED: verifySearchByAmount
+2026-08-12 21:19:16 [main] INFO  com.parabank.listeners.TestListener - ===== Suite finished: Default test | Passed: 1 | Failed: 0 | Skipped: 0 =====
+2026-08-12 21:19:21 [main] INFO  com.parabank.listeners.TestListener - ===== Suite started: Default test =====
+2026-08-12 21:19:24 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabankv2/index.htm
+2026-08-12 21:19:24 [main] INFO  com.parabank.listeners.TestListener - Test started: verifyInvalidTransactionIdSearch
+2026-08-12 21:19:37 [main] INFO  com.parabank.listeners.TestListener - Test PASSED: verifyInvalidTransactionIdSearch
+2026-08-12 21:19:38 [main] INFO  com.parabank.listeners.TestListener - ===== Suite finished: Default test | Passed: 1 | Failed: 0 | Skipped: 0 =====
+2026-08-12 21:19:43 [main] INFO  com.parabank.listeners.TestListener - ===== Suite started: Default test =====
+2026-08-12 21:19:46 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabankv2/index.htm
+2026-08-12 21:19:47 [main] INFO  com.parabank.listeners.TestListener - Test started: verifyInvalidAmountSearch
+2026-08-12 21:20:00 [main] INFO  com.parabank.listeners.TestListener - Test PASSED: verifyInvalidAmountSearch
+2026-08-12 21:20:01 [main] INFO  com.parabank.listeners.TestListener - ===== Suite finished: Default test | Passed: 1 | Failed: 0 | Skipped: 0 =====
+2026-08-12 21:20:07 [main] INFO  com.parabank.listeners.TestListener - ===== Suite started: Default test =====
+2026-08-12 21:20:11 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabankv2/index.htm
+2026-08-12 21:20:11 [main] INFO  com.parabank.listeners.TestListener - Test started: verifyTransactionDetailsUsingTransactionId
+2026-08-12 21:20:14 [main] INFO  com.parabank.listeners.TestListener - Test PASSED: verifyTransactionDetailsUsingTransactionId
+2026-08-12 21:20:14 [main] INFO  com.parabank.listeners.TestListener - ===== Suite finished: Default test | Passed: 1 | Failed: 0 | Skipped: 0 =====
+2026-08-12 21:20:20 [main] INFO  com.parabank.listeners.TestListener - ===== Suite started: Default test =====
+2026-08-12 21:20:23 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabankv2/index.htm
+2026-08-12 21:20:24 [main] INFO  com.parabank.listeners.TestListener - Test started: verifySearchByDate
+2026-08-12 21:20:26 [main] INFO  com.parabank.listeners.TestListener - Test PASSED: verifySearchByDate
+2026-08-12 21:20:27 [main] INFO  com.parabank.listeners.TestListener - ===== Suite finished: Default test | Passed: 1 | Failed: 0 | Skipped: 0 =====
+2026-08-12 21:20:33 [main] INFO  com.parabank.listeners.TestListener - ===== Suite started: Default test =====
+2026-08-12 21:20:36 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabankv2/index.htm
+2026-08-12 21:20:36 [main] INFO  com.parabank.listeners.TestListener - Test started: verifySearchByDateRange
+2026-08-12 21:20:39 [main] INFO  com.parabank.listeners.TestListener - Test PASSED: verifySearchByDateRange
+2026-08-12 21:20:39 [main] INFO  com.parabank.listeners.TestListener - ===== Suite finished: Default test | Passed: 1 | Failed: 0 | Skipped: 0 =====
+2026-08-12 21:20:45 [main] INFO  com.parabank.listeners.TestListener - ===== Suite started: Default test =====
+2026-08-12 21:20:48 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabankv2/index.htm
+2026-08-12 21:20:48 [main] INFO  com.parabank.listeners.TestListener - Test started: verifyNoResultsForDate
+2026-08-12 21:21:21 [main] INFO  com.parabank.listeners.TestListener - Test PASSED: verifyNoResultsForDate
+2026-08-12 21:21:22 [main] INFO  com.parabank.listeners.TestListener - ===== Suite finished: Default test | Passed: 1 | Failed: 0 | Skipped: 0 =====
+2026-08-12 21:21:28 [main] INFO  com.parabank.listeners.TestListener - ===== Suite started: Default test =====
+2026-08-12 21:21:32 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabankv2/index.htm
+2026-08-12 21:21:32 [main] INFO  com.parabank.listeners.TestListener - Test started: verifySearchWithSameFromAndToDate
+2026-08-12 21:21:35 [main] INFO  com.parabank.listeners.TestListener - Test PASSED: verifySearchWithSameFromAndToDate
+2026-08-12 21:21:36 [main] INFO  com.parabank.listeners.TestListener - ===== Suite finished: Default test | Passed: 1 | Failed: 0 | Skipped: 0 =====
+2026-08-12 21:21:43 [main] INFO  com.parabank.listeners.TestListener - ===== Suite started: Default test =====
+2026-08-12 21:21:46 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabankv2/index.htm
+2026-08-12 21:21:46 [main] INFO  com.parabank.listeners.TestListener - Test started: verifyMultipleTransactionsForSameAmount
+2026-08-12 21:21:50 [main] ERROR com.parabank.listeners.TestListener - Test FAILED: verifyMultipleTransactionsForSameAmount
+java.lang.AssertionError: Expected multiple transactions for amount: 100.00, but only 1 result(s) were returned expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.Assert.failNotEquals(Assert.java:1578) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.Assert.assertTrue(Assert.java:57) ~[testng-7.10.2.jar:7.10.2]
+	at com.parabank.tests.FindTransactionsTest.verifyMultipleTransactionsForSameAmount(FindTransactionsTest.java:240) ~[test-classes/:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134) ~[testng-7.10.2.jar:7.10.2]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596) [?:?]
+	at org.testng.TestRunner.privateRun(TestRunner.java:739) [testng-7.10.2.jar:7.10.2]
+	at org.testng.TestRunner.run(TestRunner.java:614) [testng-7.10.2.jar:7.10.2]
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421) [testng-7.10.2.jar:7.10.2]
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413) [testng-7.10.2.jar:7.10.2]
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373) [testng-7.10.2.jar:7.10.2]
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312) [testng-7.10.2.jar:7.10.2]
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52) [testng-7.10.2.jar:7.10.2]
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95) [testng-7.10.2.jar:7.10.2]
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274) [testng-7.10.2.jar:7.10.2]
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208) [testng-7.10.2.jar:7.10.2]
+	at org.testng.TestNG.runSuites(TestNG.java:1112) [testng-7.10.2.jar:7.10.2]
+	at org.testng.TestNG.run(TestNG.java:1079) [testng-7.10.2.jar:7.10.2]
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115) [testng-remote.jar:?]
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293) [testng-remote.jar:?]
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91) [testng-remote.jar:?]
+2026-08-12 21:21:50 [main] INFO  com.parabank.tests.BaseTest - Screenshot saved: test-output/screenshots/verifyMultipleTransactionsForSameAmount_1786549910620.png
+2026-08-12 21:21:50 [main] ERROR com.parabank.tests.BaseTest - Test FAILED: verifyMultipleTransactionsForSameAmount
+2026-08-12 21:21:51 [main] INFO  com.parabank.listeners.TestListener - ===== Suite finished: Default test | Passed: 0 | Failed: 1 | Skipped: 0 =====
+2026-08-12 21:22:02 [main] INFO  com.parabank.listeners.TestListener - ===== Suite started: Default test =====
+2026-08-12 21:22:05 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabankv2/index.htm
+2026-08-12 21:22:06 [main] INFO  com.parabank.listeners.TestListener - Test started: verifySearchUsingSpecialCharactersInTransactionId
+2026-08-12 21:22:18 [main] INFO  com.parabank.listeners.TestListener - Test PASSED: verifySearchUsingSpecialCharactersInTransactionId
+2026-08-12 21:22:19 [main] INFO  com.parabank.listeners.TestListener - ===== Suite finished: Default test | Passed: 1 | Failed: 0 | Skipped: 0 =====
+2026-08-12 21:22:26 [main] INFO  com.parabank.listeners.TestListener - ===== Suite started: Default test =====
+2026-08-12 21:22:30 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabankv2/index.htm
+2026-08-12 21:22:30 [main] INFO  com.parabank.listeners.TestListener - Test started: verifySearchUsingFutureDate
+2026-08-12 21:22:43 [main] INFO  com.parabank.listeners.TestListener - Test PASSED: verifySearchUsingFutureDate
+2026-08-12 21:22:44 [main] INFO  com.parabank.listeners.TestListener - ===== Suite finished: Default test | Passed: 1 | Failed: 0 | Skipped: 0 =====
+2026-08-12 21:22:49 [main] INFO  com.parabank.listeners.TestListener - ===== Suite started: Default test =====
+2026-08-12 21:22:52 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabankv2/index.htm
+2026-08-12 21:22:53 [main] INFO  com.parabank.listeners.TestListener - Test started: verifyNewSearchUpdatesPreviousResults
+2026-08-12 21:23:26 [main] INFO  com.parabank.listeners.TestListener - Test PASSED: verifyNewSearchUpdatesPreviousResults
+2026-08-12 21:23:27 [main] INFO  com.parabank.listeners.TestListener - ===== Suite finished: Default test | Passed: 1 | Failed: 0 | Skipped: 0 =====
+2026-08-12 21:24:58 [main] INFO  com.parabank.listeners.TestListener - ===== Suite started: Default test =====
+2026-08-12 21:25:02 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabankv2/index.htm
+2026-08-12 21:25:03 [main] INFO  com.parabank.listeners.TestListener - Test started: verifySearchUsingInvalidDateFormat
+2026-08-12 21:25:15 [main] INFO  com.parabank.listeners.TestListener - Test PASSED: verifySearchUsingInvalidDateFormat
+2026-08-12 21:25:16 [main] INFO  com.parabank.listeners.TestListener - ===== Suite finished: Default test | Passed: 1 | Failed: 0 | Skipped: 0 =====
+2026-08-12 21:28:22 [main] INFO  com.parabank.listeners.TestListener - ===== Suite started: Default test =====
+2026-08-12 21:28:26 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabankv2/index.htm
+2026-08-12 21:28:27 [main] INFO  com.parabank.listeners.TestListener - Test started: verifyTransferredTransactionInFindTransactions
+2026-08-12 21:28:30 [main] ERROR com.parabank.listeners.TestListener - Test FAILED: verifyTransferredTransactionInFindTransactions
+java.lang.AssertionError: Transferred Transaction ID was not found: 14476 expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.Assert.failNotEquals(Assert.java:1578) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.Assert.assertTrue(Assert.java:57) ~[testng-7.10.2.jar:7.10.2]
+	at com.parabank.tests.FindTransactionsTest.verifyTransferredTransactionInFindTransactions(FindTransactionsTest.java:449) ~[test-classes/:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134) ~[testng-7.10.2.jar:7.10.2]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596) [?:?]
+	at org.testng.TestRunner.privateRun(TestRunner.java:739) [testng-7.10.2.jar:7.10.2]
+	at org.testng.TestRunner.run(TestRunner.java:614) [testng-7.10.2.jar:7.10.2]
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421) [testng-7.10.2.jar:7.10.2]
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413) [testng-7.10.2.jar:7.10.2]
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373) [testng-7.10.2.jar:7.10.2]
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312) [testng-7.10.2.jar:7.10.2]
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52) [testng-7.10.2.jar:7.10.2]
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95) [testng-7.10.2.jar:7.10.2]
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274) [testng-7.10.2.jar:7.10.2]
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208) [testng-7.10.2.jar:7.10.2]
+	at org.testng.TestNG.runSuites(TestNG.java:1112) [testng-7.10.2.jar:7.10.2]
+	at org.testng.TestNG.run(TestNG.java:1079) [testng-7.10.2.jar:7.10.2]
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115) [testng-remote.jar:?]
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293) [testng-remote.jar:?]
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91) [testng-remote.jar:?]
+2026-08-12 21:28:30 [main] INFO  com.parabank.tests.BaseTest - Screenshot saved: test-output/screenshots/verifyTransferredTransactionInFindTransactions_1786550310264.png
+2026-08-12 21:28:30 [main] ERROR com.parabank.tests.BaseTest - Test FAILED: verifyTransferredTransactionInFindTransactions
+2026-08-12 21:28:30 [main] INFO  com.parabank.listeners.TestListener - ===== Suite finished: Default test | Passed: 0 | Failed: 1 | Skipped: 0 =====
+2026-08-12 21:35:55 [main] INFO  com.parabank.listeners.TestListener - ===== Suite started: Default test =====
+2026-08-12 21:35:59 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabankv2/index.htm
+2026-08-12 21:36:00 [main] INFO  com.parabank.listeners.TestListener - Test started: verifyTransferredTransactionInFindTransactions
+2026-08-12 21:36:03 [main] INFO  com.parabank.listeners.TestListener - Test PASSED: verifyTransferredTransactionInFindTransactions
+2026-08-12 21:36:03 [main] INFO  com.parabank.listeners.TestListener - ===== Suite finished: Default test | Passed: 1 | Failed: 0 | Skipped: 0 =====
+2026-08-12 21:36:58 [main] INFO  com.parabank.listeners.TestListener - ===== Suite started: Default test =====
+2026-08-12 21:37:03 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabankv2/index.htm
+2026-08-12 21:37:03 [main] INFO  com.parabank.listeners.TestListener - Test started: verifyTransferredTransactionByAmount
+2026-08-12 21:37:07 [main] INFO  com.parabank.listeners.TestListener - Test PASSED: verifyTransferredTransactionByAmount
+2026-08-12 21:37:07 [main] INFO  com.parabank.listeners.TestListener - ===== Suite finished: Default test | Passed: 1 | Failed: 0 | Skipped: 0 =====
+2026-08-12 21:37:46 [main] INFO  com.parabank.listeners.TestListener - ===== Suite started: Default test =====
+2026-08-12 21:37:50 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabankv2/index.htm
+2026-08-12 21:37:50 [main] INFO  com.parabank.listeners.TestListener - Test started: verifyTransferredTransactionByDateRange
+2026-08-12 21:37:53 [main] INFO  com.parabank.listeners.TestListener - Test PASSED: verifyTransferredTransactionByDateRange
+2026-08-12 21:37:54 [main] INFO  com.parabank.listeners.TestListener - ===== Suite finished: Default test | Passed: 1 | Failed: 0 | Skipped: 0 =====
+2026-08-12 21:40:43 [main] INFO  com.parabank.listeners.TestListener - ===== Suite started: Default test =====
+2026-08-12 21:40:47 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabankv2/index.htm
+2026-08-12 21:40:47 [main] INFO  com.parabank.listeners.TestListener - Test started: verifyTransactionDetailsFromFindTransactions
+2026-08-12 21:40:53 [main] INFO  com.parabank.listeners.TestListener - Test PASSED: verifyTransactionDetailsFromFindTransactions
+2026-08-12 21:40:54 [main] INFO  com.parabank.listeners.TestListener - ===== Suite finished: Default test | Passed: 1 | Failed: 0 | Skipped: 0 =====
+2026-08-12 21:41:20 [main] INFO  com.parabank.listeners.TestListener - ===== Suite started: Default test =====
+2026-08-12 21:41:23 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabankv2/index.htm
+2026-08-12 21:41:23 [main] INFO  com.parabank.listeners.TestListener - Test started: verifyTransactionDetailsByAmount
+2026-08-12 21:41:29 [main] INFO  com.parabank.listeners.TestListener - Test PASSED: verifyTransactionDetailsByAmount
+2026-08-12 21:41:29 [main] INFO  com.parabank.listeners.TestListener - ===== Suite finished: Default test | Passed: 1 | Failed: 0 | Skipped: 0 =====
+2026-08-12 21:49:16 [main] INFO  com.parabank.listeners.TestListener - ===== Suite started: Default test =====
+2026-08-12 21:49:20 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabankv2/index.htm
+2026-08-12 21:49:21 [main] INFO  com.parabank.listeners.TestListener - Test started: verifyTransferredTransactionByAmount
+2026-08-12 21:49:24 [main] INFO  com.parabank.listeners.TestListener - Test PASSED: verifyTransferredTransactionByAmount
+2026-08-12 21:49:25 [main] INFO  com.parabank.listeners.TestListener - ===== Suite finished: Default test | Passed: 1 | Failed: 0 | Skipped: 0 =====
+2026-08-12 21:49:44 [main] INFO  com.parabank.listeners.TestListener - ===== Suite started: Default test =====
+2026-08-12 21:49:48 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabankv2/index.htm
+2026-08-12 21:49:48 [main] INFO  com.parabank.listeners.TestListener - Test started: verifyMultipleTransactionsForSameAmount
+2026-08-12 21:49:52 [main] ERROR com.parabank.listeners.TestListener - Test FAILED: verifyMultipleTransactionsForSameAmount
+java.lang.AssertionError: Expected multiple transactions for amount: 100.00, but only 1 result(s) were returned expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.Assert.failNotEquals(Assert.java:1578) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.Assert.assertTrue(Assert.java:57) ~[testng-7.10.2.jar:7.10.2]
+	at com.parabank.tests.FindTransactionsTest.verifyMultipleTransactionsForSameAmount(FindTransactionsTest.java:210) ~[test-classes/:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154) ~[testng-7.10.2.jar:7.10.2]
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134) ~[testng-7.10.2.jar:7.10.2]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596) [?:?]
+	at org.testng.TestRunner.privateRun(TestRunner.java:739) [testng-7.10.2.jar:7.10.2]
+	at org.testng.TestRunner.run(TestRunner.java:614) [testng-7.10.2.jar:7.10.2]
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421) [testng-7.10.2.jar:7.10.2]
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413) [testng-7.10.2.jar:7.10.2]
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373) [testng-7.10.2.jar:7.10.2]
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312) [testng-7.10.2.jar:7.10.2]
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52) [testng-7.10.2.jar:7.10.2]
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95) [testng-7.10.2.jar:7.10.2]
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274) [testng-7.10.2.jar:7.10.2]
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208) [testng-7.10.2.jar:7.10.2]
+	at org.testng.TestNG.runSuites(TestNG.java:1112) [testng-7.10.2.jar:7.10.2]
+	at org.testng.TestNG.run(TestNG.java:1079) [testng-7.10.2.jar:7.10.2]
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115) [testng-remote.jar:?]
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293) [testng-remote.jar:?]
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91) [testng-remote.jar:?]
+2026-08-12 21:49:52 [main] INFO  com.parabank.tests.BaseTest - Screenshot saved: test-output/screenshots/verifyMultipleTransactionsForSameAmount_1786551592926.png
+2026-08-12 21:49:52 [main] ERROR com.parabank.tests.BaseTest - Test FAILED: verifyMultipleTransactionsForSameAmount
+2026-08-12 21:49:53 [main] INFO  com.parabank.listeners.TestListener - ===== Suite finished: Default test | Passed: 0 | Failed: 1 | Skipped: 0 =====
+2026-08-12 21:52:24 [main] INFO  com.parabank.listeners.TestListener - ===== Suite started: Default test =====
+2026-08-12 21:52:27 [main] INFO  com.parabank.tests.BaseTest - Browser launched and navigated to: https://parabank.parasoft.com/parabankv2/index.htm
+2026-08-12 21:52:28 [main] INFO  com.parabank.listeners.TestListener - Test started: verifyAllTransactionsMatchSearchedAmount
+2026-08-12 21:52:31 [main] INFO  com.parabank.listeners.TestListener - Test PASSED: verifyAllTransactionsMatchSearchedAmount
+2026-08-12 21:52:32 [main] INFO  com.parabank.listeners.TestListener - ===== Suite finished: Default test | Passed: 1 | Failed: 0 | Skipped: 0 =====

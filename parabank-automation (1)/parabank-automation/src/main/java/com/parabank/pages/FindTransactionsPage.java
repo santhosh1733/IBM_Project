@@ -3,6 +3,7 @@ package com.parabank.pages;
 import java.time.Duration;
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -157,6 +158,71 @@ public class FindTransactionsPage extends BasePage {
 				}
 			}
 			return false;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+
+	// Verify all displayed transactions contain the searched amount
+	public boolean areAllResultsForAmountDisplayed(String amount) {
+		try {
+			wait.until(ExpectedConditions.visibilityOf(resultsTable));
+			if (resultRows.isEmpty()) {
+				return false;
+			}
+			for (WebElement row : resultRows) {
+				if (!row.getText().contains(amount)) {
+					return false;
+				}
+			}
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+
+	// Verify transaction description is displayed
+	public boolean isTransactionDescriptionDisplayed(String description) {
+		try {
+			wait.until(ExpectedConditions.visibilityOf(resultsTable));
+			for (WebElement row : resultRows) {
+				if (row.getText().contains(description)) {
+					return true;
+				}
+			}
+			return false;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+
+	// Verify transaction amount is displayed
+	public boolean isTransactionAmountDisplayed(String amount) {
+		try {
+			wait.until(ExpectedConditions.visibilityOf(resultsTable));
+			for (WebElement row : resultRows) {
+				if (row.getText().contains(amount)) {
+					return true;
+				}
+			}
+			return false;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+
+	// Click transaction from search results
+	public void clickFirstTransaction() {
+		wait.until(ExpectedConditions.visibilityOf(resultsTable));
+		wait.until(ExpectedConditions.elementToBeClickable(resultRows.get(0).findElement(By.tagName("a"))));
+		resultRows.get(0).findElement(By.tagName("a")).click();
+	}
+
+//Verify transaction details page is displayed
+	public boolean isTransactionDetailsPageDisplayed() {
+		try {
+			wait.until(ExpectedConditions.urlContains("transaction.htm"));
+			return driver.getCurrentUrl().contains("transaction.htm");
 		} catch (Exception e) {
 			return false;
 		}
