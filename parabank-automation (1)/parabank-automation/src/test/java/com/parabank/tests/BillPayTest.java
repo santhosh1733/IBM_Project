@@ -21,11 +21,11 @@ import java.util.Map;
 /**
  * M4 - Bill Pay automation.
  *
- * Ten focused scripts are included across smoke, functional, integration,
- * regression, system and end-to-end coverage. The added scenarios verify
- * cross-module account consistency, Find Transactions integration, new-account
- * to Bill Pay flow, cumulative payment impact, and transaction persistence
- * across logout/login.
+ * Twenty focused scripts are included across smoke, functional, negative,
+ * integration, regression, system and end-to-end coverage. PB_AUTO_01 through
+ * PB_AUTO_10 keep the existing business-flow coverage. PB_AUTO_11 through
+ * PB_AUTO_19 add field-level validation coverage, while PB_AUTO_20 verifies
+ * explicit source-account selection through the Bill Pay confirmation.
  *
  * The application URL is read by BaseTest from config.properties. Login
  * credentials are read from config.properties so test classes do not contain
@@ -418,6 +418,116 @@ public class BillPayTest extends BaseTest {
 		pass("Verification Passed: Bill Payment persists across user sessions.");
 	}
 
+
+	@Test(groups = { "functional", "negative" },
+			description = "PB_AUTO_11 - Verify Payee Name mandatory validation")
+	public void pbAuto11_verifyPayeeNameMandatoryValidation() {
+		verifyMandatoryFieldValidation("PB_AUTO_11", "Payee Name");
+	}
+
+	@Test(groups = { "functional", "negative" },
+			description = "PB_AUTO_12 - Verify Street mandatory validation")
+	public void pbAuto12_verifyStreetMandatoryValidation() {
+		verifyMandatoryFieldValidation("PB_AUTO_12", "Street");
+	}
+
+	@Test(groups = { "functional", "negative" },
+			description = "PB_AUTO_13 - Verify City mandatory validation")
+	public void pbAuto13_verifyCityMandatoryValidation() {
+		verifyMandatoryFieldValidation("PB_AUTO_13", "City");
+	}
+
+	@Test(groups = { "functional", "negative" },
+			description = "PB_AUTO_14 - Verify State mandatory validation")
+	public void pbAuto14_verifyStateMandatoryValidation() {
+		verifyMandatoryFieldValidation("PB_AUTO_14", "State");
+	}
+
+	@Test(groups = { "functional", "negative" },
+			description = "PB_AUTO_15 - Verify Zip Code mandatory validation")
+	public void pbAuto15_verifyZipCodeMandatoryValidation() {
+		verifyMandatoryFieldValidation("PB_AUTO_15", "Zip Code");
+	}
+
+	@Test(groups = { "functional", "negative" },
+			description = "PB_AUTO_16 - Verify Phone mandatory validation")
+	public void pbAuto16_verifyPhoneMandatoryValidation() {
+		verifyMandatoryFieldValidation("PB_AUTO_16", "Phone");
+	}
+
+	@Test(groups = { "functional", "negative" },
+			description = "PB_AUTO_17 - Verify Payee Account mandatory validation")
+	public void pbAuto17_verifyPayeeAccountMandatoryValidation() {
+		verifyMandatoryFieldValidation("PB_AUTO_17", "Payee Account");
+	}
+
+	@Test(groups = { "functional", "negative" },
+			description = "PB_AUTO_18 - Verify Account verification mandatory validation")
+	public void pbAuto18_verifyVerifyAccountMandatoryValidation() {
+		verifyMandatoryFieldValidation("PB_AUTO_18", "Verify Account");
+	}
+
+	@Test(groups = { "functional", "negative" },
+			description = "PB_AUTO_19 - Verify invalid payment amount validation")
+	public void pbAuto19_verifyInvalidPaymentAmountValidation() {
+		Map<String, String> data = data("PB_AUTO_19");
+
+		info("Step 1: Login to ParaBank using valid credentials.");
+		BillPayAccountOverviewPage overview = loginAndGetOverview();
+		pass("Step 1 Passed: Login successful and Accounts Overview displayed.");
+
+		String sourceAccount = overview.getFirstAccountId();
+		info("Step 2: Enter complete Bill Pay data with invalid Amount='" + data.get("Amount") + "'.");
+		BillPayPage billPay = fillCompleteBillPayForm(overview, data, sourceAccount, true);
+		pass("Step 2 Passed: Invalid amount test data entered.");
+
+		info("Step 3: Click Send Payment.");
+		billPay.submitPayment();
+
+		String validationKeyword = data.get("ValidationKeyword");
+		info("Step 4: Verify an Amount validation message is displayed.");
+		Assert.assertTrue(billPay.hasVisibleValidationContaining(validationKeyword),
+				"Expected Amount validation was not displayed. Visible validations: "
+						+ billPay.getVisibleValidationMessages());
+		pass("Verification Passed: Invalid Amount is rejected with validation containing '"
+				+ validationKeyword + "'.");
+	}
+
+	@Test(groups = { "functional", "regression" },
+			description = "PB_AUTO_20 - Verify selected source account is preserved in Bill Pay confirmation")
+	public void pbAuto20_verifySelectedSourceAccountInConfirmation() {
+		Map<String, String> data = data("PB_AUTO_20");
+
+		info("Step 1: Login and capture available source accounts.");
+		BillPayAccountOverviewPage overview = loginAndGetOverview();
+		List<String> accountIds = overview.getAllAccountIds();
+		Assert.assertFalse(accountIds.isEmpty(), "No source account is available for Bill Pay.");
+		String selectedAccount = accountIds.get(accountIds.size() - 1);
+		pass("Step 1 Passed: Selected source account = " + selectedAccount + ".");
+
+		info("Step 2: Populate Bill Pay form and explicitly select source account " + selectedAccount + ".");
+		BillPayPage billPay = fillCompleteBillPayForm(overview, data, selectedAccount, true);
+		Assert.assertEquals(billPay.getSelectedFromAccount(), selectedAccount,
+				"Bill Pay From Account dropdown did not retain the selected account.");
+		pass("Step 2 Passed: Bill Pay dropdown shows source account " + selectedAccount + ".");
+
+		info("Step 3: Submit the Bill Payment.");
+		billPay.submitPayment();
+		assertNoBackendError(billPay);
+		Assert.assertTrue(billPay.isPaymentSuccessful(), "Bill Payment did not complete successfully.");
+		pass("Step 3 Passed: Bill Payment completed successfully.");
+
+		info("Step 4: Verify confirmation retains the selected account, payee and amount.");
+		Assert.assertEquals(billPay.getConfirmedFromAccount(), selectedAccount,
+				"Confirmation source account is different from the selected account.");
+		Assert.assertEquals(billPay.getConfirmedPayeeName(), data.get("PayeeName"),
+				"Confirmation payee name is incorrect.");
+		Assert.assertEquals(billPay.getConfirmedAmount(), formatCurrency(data.get("Amount")),
+				"Confirmation amount is incorrect.");
+		pass("Verification Passed: Confirmation preserved source account " + selectedAccount
+				+ ", Payee=" + data.get("PayeeName") + " and Amount=" + formatCurrency(data.get("Amount")) + ".");
+	}
+
 	private BillPayAccountOverviewPage loginAndGetOverview() {
 		String username = System.getProperty("parabank.username", ConfigReader.get("parabank.username"));
 		String password = System.getProperty("parabank.password", ConfigReader.get("parabank.password"));
@@ -444,6 +554,30 @@ public class BillPayTest extends BaseTest {
 			billPay.enterAmount(data.get("Amount"));
 		}
 		return billPay;
+	}
+
+
+	private void verifyMandatoryFieldValidation(String testCaseId, String fieldLabel) {
+		Map<String, String> data = data(testCaseId);
+
+		info("Step 1: Login to ParaBank using valid credentials.");
+		BillPayAccountOverviewPage overview = loginAndGetOverview();
+		pass("Step 1 Passed: Login successful and Accounts Overview displayed.");
+
+		String sourceAccount = overview.getFirstAccountId();
+		info("Step 2: Navigate to Bill Pay and submit data with " + fieldLabel + " left blank.");
+		BillPayPage billPay = fillCompleteBillPayForm(overview, data, sourceAccount, true);
+		pass("Step 2 Passed: Bill Pay form prepared with " + fieldLabel + " intentionally blank.");
+
+		info("Step 3: Click Send Payment.");
+		billPay.submitPayment();
+
+		String validationKeyword = data.get("ValidationKeyword");
+		info("Step 4: Verify the " + fieldLabel + " mandatory validation is displayed.");
+		Assert.assertTrue(billPay.hasVisibleValidationContaining(validationKeyword),
+				"Expected " + fieldLabel + " validation was not displayed. Visible validations: "
+						+ billPay.getVisibleValidationMessages());
+		pass("Verification Passed: " + fieldLabel + " validation contains '" + validationKeyword + "'.");
 	}
 
 	private Map<String, String> data(String testCaseId) {

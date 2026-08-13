@@ -9,6 +9,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
+import java.util.Locale;
 
 /**
  * Bill Pay page object (Owner: M4).
@@ -158,6 +159,34 @@ public class BillPayPage extends BasePage {
                 .map(option -> option.getText().trim())
                 .filter(text -> !text.isBlank())
                 .toList();
+    }
+
+    public String getSelectedFromAccount() {
+        waitUntilLoaded();
+        return new Select(fromAccountDropdown).getFirstSelectedOption().getText().trim();
+    }
+
+    /**
+     * Returns every visible client-side validation message on the Bill Pay form.
+     * The generic span.error lookup avoids coupling simple negative tests to
+     * generated Angular validation IDs.
+     */
+    public List<String> getVisibleValidationMessages() {
+        return driver.findElements(By.cssSelector("span.error")).stream()
+                .filter(WebElement::isDisplayed)
+                .map(element -> element.getText().trim())
+                .filter(text -> !text.isBlank())
+                .toList();
+    }
+
+    public boolean hasVisibleValidationContaining(String keyword) {
+        if (keyword == null || keyword.isBlank()) {
+            return false;
+        }
+        String expected = keyword.toLowerCase(Locale.ROOT);
+        return getVisibleValidationMessages().stream()
+                .map(text -> text.toLowerCase(Locale.ROOT))
+                .anyMatch(text -> text.contains(expected));
     }
 
     public BillPayPage submitPayment() {
