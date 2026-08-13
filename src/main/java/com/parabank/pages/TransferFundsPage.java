@@ -31,6 +31,16 @@ public class TransferFundsPage extends BasePage {
 
     @FindBy(id = "amountResult")
     private WebElement confirmedAmount;
+    
+    @FindBy(linkText = "Accounts Overview")
+	private WebElement accountOverviewLink;
+    
+    public AccountOverviewPage clickAccountOverview() {
+
+	    click(accountOverviewLink);
+
+	    return new AccountOverviewPage(driver);
+	}
 
     public TransferFundsPage(WebDriver driver) {
         super(driver);
