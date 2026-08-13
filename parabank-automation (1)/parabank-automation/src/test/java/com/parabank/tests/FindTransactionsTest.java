@@ -404,4 +404,8 @@ public class FindTransactionsTest extends BaseTest {
 				"Transaction details page was not displayed");
 		System.out.println("E2E PASSED - Transaction details opened successfully " + "for amount: " + AMOUNT);
 	}
+	@Test
+	public void verifyFindTransactionDate() {
+		
+	}
 }
